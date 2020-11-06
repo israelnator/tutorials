@@ -159,22 +159,23 @@ These two columns are dropped because they are both clear indicators that the lo
 
 On task 2, we will explore and update the **Experiment Settings**.
 
-## Task 2: Explore Experiment Settings and Expert Settings
+## Task 2: Explore Experiment Settings and Expert Settings (Explore la configuración del experimento y la configuración experta)
 
-1\.  Hover over to **Experiment Settings** and note the three knobs, **Accuracy**, **Time** and **Interpretability**.
 
-The **Experiment Settings** describe the Accuracy, Time, and Interpretability of your specific experiment. The knobs on the experiment settings are adjustable, as the values change the meaning of the settings on the left-bottom page change.
+1\.  Desplácese hasta **Configuración del experimento** y observe los tres botones, **Precisión**, **Tiempo** e **Interpretabilidad**.
 
-Here is an overview of the Experiments settings: 
+La **configuración del experimento** describe la precisión, el tiempo y la interpretabilidad de su experimento específico. Las perillas de la configuración del experimento son ajustables, ya que los valores cambian el significado de la configuración en la página inferior izquierda.
 
-- **Accuracy** - Relative accuracy – higher values, should lead to higher confidence in model performance (accuracy).
-- **Time** - Relative time for completing the experiment. Higher values will take longer for the experiment to complete.
-- **Interpretability**-  The ability to explain or to present in understandable terms to a human. The higher the interpretability the simpler the features that will be extracted.  
+Aquí hay una descripción general de la configuración de Experimentos: 
+
+- **Accuracy** - Precisión relativa: los valores más altos deberían conducir a una mayor confianza en el rendimiento del modelo (precisión).
+- **Time** - Tiempo relativo para completar el experimento. Los valores más altos tardarán más en completarse el experimento.
+- **Interpretability**-  La capacidad de explicar o presentar en términos comprensibles a un humano. Cuanto mayor sea la interpretabilidad, más simples serán las características que se extraerán.  
 
 
 ### Accuracy
 
-By increasing the accuracy setting, Driverless AI gradually adjusts the method for performing the evolution and ensemble. A machine learning ensemble consists of multiple learning algorithms to obtain a better predictive performance that could be obtained from any one single learning algorithm[1]. With a  low accuracy setting, Driverless AI varies features(from feature engineering) and models, but they all compete evenly against each other. At higher accuracy, each independent main model will evolve independently and be part of the final ensemble as an ensemble over different main models. At higher accuracies, Driverless AI will evolve+ensemble feature types like Target Encoding on and off that evolve independently. Finally, at highest accuracies, Driverless AI performs both model and feature tracking and ensembles all those variations.
+Al aumentar la configuración de precisión, Driverless AI ajusta gradualmente el método para realizar la evolución y el conjunto. Un conjunto de aprendizaje automático consta de varios algoritmos de aprendizaje para obtener un mejor rendimiento predictivo que podría obtenerse de cualquier algoritmo de aprendizaje único [1]. Con una configuración de baja precisión, Driverless AI varía las características (desde la ingeniería de características) y los modelos, pero todos compiten de manera uniforme entre sí. Con mayor precisión, cada modelo principal independiente evolucionará de forma independiente y será parte del conjunto final como un conjunto sobre diferentes modelos principales. Con mayor precisión, la IA sin conductor evolucionará + tipos de funciones de conjunto, como la codificación de destino, que se activa y desactiva de forma independiente. Finalmente, con las precisiones más altas, Driverless AI realiza tanto el seguimiento de modelos como de características y ensambla todas esas variaciones.
 
 ### Time
 
@@ -182,295 +183,296 @@ Time specifies the relative time for completing the experiment (i.e., higher set
 
 ### Interpretability 
 
-The interpretability knob is adjustable. The higher the interpretability, the simpler the features the main modeling routine will extract from the dataset. If the interpretability is high enough then a monotonically constrained model will be generated.
+El tiempo especifica el tiempo relativo para completar el experimento (es decir, los ajustes más altos toman más tiempo). La detención anticipada tendrá lugar si el experimento no mejora la puntuación para la cantidad especificada de iteraciones. Cuanto mayor sea el valor de tiempo, más tiempo se asignará para más iteraciones, lo que significa que la receta tendrá más tiempo para investigar nuevas transformaciones en la ingeniería de características y el ajuste de hiperparámetros del modelo..
 
-2\.  For this tutorial update the following experiment settings so that they match the image below: 
-- **Accuracy : 4**
-- **Time: 3**
-- **Interpretability: 4**
-- **Scorer: Logloss** 
+2\.  Para este tutorial, actualice la siguiente configuración del experimento para que coincida con la imagen a continuación: 
+- **Accuracy (Exactitud) : 4**
+- **Time (Tiempo): 3**
+- **Interpretability (Interpretabilidad): 4**
+- **Scorer (Puntuación): Logloss** 
 
-This configuration was selected to generate a model quickly with a sufficient level of accuracy in the H2O Driverless Test Drive environment.
+Esta configuración se seleccionó para generar un modelo rápidamente con un nivel suficiente de precisión en el entorno de prueba de conducción sin conductor H2O.
 
 ![experiment-settings-2](assets/experiment-settings-2.jpg)    
 
-### Expert Settings
+### Expert Settings (Configuración experta)
 
-3\. Hover over to **Expert Settings** and click on it. An image similar to the one below will appear:
+3\. Coloca el cursor sobre **Configuración experta** y haz clic en él. Aparecerá una imagen similar a la de abajo:
 
 ![expert-settings-1](assets/expert-settings-1.jpg)
-*Things to Note:*
-1. **+ Upload Custom Recipe**
-2. **+ Load Custom Recipe From URL** 
-3. **Official Recipes (External)**
-4. **Experiment**
-5. **Model**
-6. **Features**
-7. **Timeseries**
+* Cosas a tener en cuenta: *
+1. **+ Upload Custom Recipe (+ Subir receta personalizada)**
+2. **+ Load Custom Recipe From URL (+ Cargar receta personalizada desde URL)** 
+3. **Official Recipes (External)  Recetas Oficiales (Externas)**
+4. **Experiment (Experimentar)**
+5. **Model (Modelo)**
+6. **Features (Caracteristicas)**
+7. **Timeseries (Timeseries)**
 8. **NLP**
-9. **Image**
-9. **Recipes**
-10. **System**
+9. **Image (Imagen)**
+9. **Recipes Recetas**
+10. **System Sistema**
 
-**Expert Settings** are options that are available for those who would like to set their settings manually.  Explore the available expert settings by clicking in the tabs on top of the page.
+**Expert Settings** son opciones que están disponibles para aquellos que deseen establecer su configuración manualmente. Explore la configuración experta disponible haciendo clic en las pestañas en la parte superior de la página.
 
 **Expert settings include**:
 
-**Experiment Settings**
-- Max Runtime in Minutes Before Triggering the Finish Button
-- Max Runtime in Minutes Before Triggering the 'Abort' Button
-- Pipeline Building Recipe
-- Enable genetic algorithm for selection and tuning of features and models
-- Make Python Scoring Pipeline
-- Make MOJO Scoring Pipeline
-- Attempt to reduce the size of the Mojo
-- Make Pipeline Visualization
-- Make Autoreport
-- Measure MOJO Scoring Latency
-- Timeout in Seconds to Wait for MOJO Creation at End of Experiment
-- Number of Parallel Workers to Use during MOJO Creation
-- Kaggle username
-- Kaggle Key
-- Kaggle submission timeout in seconds
-- Min Number of Rows Needed to Run an Experiment
-- Reproducibility Level
-- Random Seed
-- Allow Different Sets of Classes Across All Train/Validation Fold Splits
-- Max Number of Classes for Classification Problems
-- Max Number of Classes to Computer ROC and Confusion Matrix for Classification Problems
-- Max number of classes to show in GUI for confusion matrix
-- ROC/CM reduction technique for large class counts 
-- Model/Feature Brain Level(0..10)
-- Feature Brain Save every which iteration (0 = disable)
-- Feature Brain Restart from which iteration (-1 = auto)
-- Feature Brain refit uses same best individual
-- Feature Brain adds features with new columns even during retraining final model
-- Restart-refit default model settings if model switches 
-- Min, DAI iterations 
-- Select target transformation of the target for regression problems
-- Tournament model for generit algorithm
-- Number of cross-validation folds for feature evolution (-1 = auto)
-- Number of cross-validation folds for final model (-1 = auto)
-- Force only first fold for models
-- Max,num, of rows x num,of columns for feature evolution data splits (not for final pipeline)
-- Max, num, of rows x num, of columns for reducing training data set (for final pipeline)
-- Max, size of validation data relative to training data (for final pipeline), otherwise will sample
-- Perform stratified sampling for binary classification if the target is more imbalanced than this,
-- Add to config.toml via toml string 
+**Experiment Settings (Configuración del experimento)**
+- Tiempo de ejecución máximo en minutos antes de activar el botón Finalizar
+- Tiempo de ejecución máximo en minutos antes de activar el botón 'Abortar'
+- Receta de construcción de oleoductos
+- Habilite el algoritmo genético para la selección y ajuste de características y modelos
+- Hacer canalización de puntuación de Python
+- Hacer canalización de puntuación MOJO
+- Intentar reducir el tamaño del Mojo
+- Hacer visualización de canalizaciones
+- Hacer autoinforme
+- Medir la latencia de puntuación de MOJO
+- Tiempo de espera en segundos para esperar la creación de MOJO al final del experimento
+- Número de trabajadores paralelos que se utilizarán durante la creación de MOJO
+- Nombre de usuario de Kaggle
+- Llave Kaggle
+- Tiempo de espera de envío de Kaggle en segundos
+- Número mínimo de filas necesarias para ejecutar un experimento
+- Nivel de reproducibilidad
+- Semilla aleatoria
+- Permitir diferentes conjuntos de clases en todas las divisiones de plegado de validación / tren
+- Número máximo de clases para problemas de clasificación
+- Número máximo de clases para computadora ROC y matriz de confusión para problemas de clasificación
+- Número máximo de clases para mostrar en la GUI para la matriz de confusión
+- Técnica de reducción ROC / CM para grandes recuentos de clases
+- Modelo / Característica Nivel de cerebro (0..10)
+- Función Brain Save cada iteración (0 = deshabilitar)
+- Característica Reinicio cerebral desde qué iteración (-1 = automático)
+- Característica El reajuste del cerebro utiliza el mismo mejor individuo
+Feature Brain agrega funciones con nuevas columnas incluso durante el reentrenamiento del modelo final
+- Reiniciar-reajustar la configuración predeterminada del modelo si el modelo cambia
+- Mínimo, iteraciones de DAI
+- Seleccionar la transformación de destino del destino para problemas de regresión
+- Modelo de torneo para algoritmo genérico
+- Número de pliegues de validación cruzada para la evolución de características (-1 = automático)
+- Número de pliegues de validación cruzada para el modelo final (-1 = automático)
+- Forzar solo el primer pliegue para modelos
+- Max, num, de filas x num, de columnas para las divisiones de datos de evolución de características (no para la canalización final)
+- Max, num, de filas x num, de columnas para reducir el conjunto de datos de entrenamiento (para la canalización final)
+- Tamaño máximo de los datos de validación en relación con los datos de entrenamiento (para la canalización final); de lo contrario, se muestreará
+- Realizar un muestreo estratificado para la clasificación binaria si el objetivo está más desequilibrado que éste,
+- Agregar a config.toml a través de la cadena toml
 
-**Model Settings**
+**Model Settings (Configuración del modelo)**
 
-- Constant Models
-- Decision Tree Models
-- GLM Models
-- XGBoost GBM Models
-- XGBoost Dart Models
-- LightGBM Models
-- TensorFlow Models
-- PyTorch Models
-- FTRL Models
-- RuleFit Models
-- Zero-Inflated models
-- LightGBM Boosting Types
-- LightGBM Categorical Support
-- Whether To Show Constant Models in Iteration Panel
-- Parameters for TensorFlow
-- Max Number of Trees/Iterations
-- N_estimators List To Sample From For Models That Do Not Use Early Stopping
-- Minimum Learning Rate for Final Ensemble GBM Models
-- Maximum Learning Rate for Final Ensemble GBM Models
-- Reduction Factor For Max. Number of Trees/Iterations During Feature Evolution
-- Reduction Factor for Number of Trees/Iterations During Feature Evolution
-- Minimum Learning Rate for Feature Engineering GBM Models
-- Max Learning Rate for Tree Models
-- Max Number of Epochs for TensorFlow/FTRL
-- Max. Tree Depth
-- Max. max_bin for Tree Features
-- Max Number of Rules for RuleFit
-- Ensemble Level for Final Modeling Pipeline
-- Cross-validate Single Final Model
-- Number of Models During Tuning Phase
-- Sampling Method for Imbalanced Binary Classification Problems
-- Threshold for minimum number of rows in original training data to allow imbalanced sampling techniques. For smaller data, will disable imbalanced sampling, no matter what imbalance_sampling_method is set to.
-- Ratio of Majority to Minority Class for Imbalanced Binary Classification to Trigger Special Sampling Techniques (if Enabled)
-- Ratio of Majority to Minority Class for Heavily Imbalanced Binary Classification to Only Enable Special Sampling Techniques if Enabled
-- Number of Bags for Sampling Methods for Imbalanced Binary Classification (if Enabled)
-- Hard Limit on Number of Bags for Sampling Methods for Imbalanced Binary Classification
-- Hard Limit on Number of Bags for Sampling Methods for Imbalanced Binary Classification During Feature Evolution Phase
-- Max Size of Data Sampled During Imbalanced Sampling
-- Target Fraction of Minority Class After Applying Under/Over-Sampling Techniques
-- Max Number of Automatic FTRL Interactions Terms for 2nd, 3rd, 4th order interactions terms (Each)
-- Enable Detailed Scored Model Info
-- Whether to Enable Bootstrap Sampling for Validation and Test Scores
-- For Classification Problems with This Many Classes, Default to TensorFlow
-- Compute prediction intervals
-- Confidence level for prediction intervals
+- Modelos constantes
+- Modelos de árboles de decisión
+- Modelos GLM
+- Modelos XGBoost GBM
+- Modelos de dardos XGBoost
+- Modelos LightGBM
+- Modelos de TensorFlow
+- Modelos de PyTorch
+- Modelos FTRL
+- Modelos RuleFit
+- Modelos de inflado cero
+- Tipos de impulso LightGBM
+- Soporte categórico LightGBM
+- Ya sea para mostrar modelos constantes en el panel de iteración
+- Parámetros para TensorFlow
+- Número máximo de árboles / iteraciones
+- Lista de N_estimators para muestrear modelos que no utilizan la parada anticipada
+- Tasa de aprendizaje mínima para modelos de GBM de conjunto final
+- Tasa de aprendizaje máxima para modelos GBM de conjunto final
+- Factor de reducción para máx. Número de árboles / iteraciones durante la evolución de características
+- Factor de reducción para el número de árboles / iteraciones durante la evolución de características
+- Tasa de aprendizaje mínima para modelos GBM de ingeniería de funciones
+- Tasa de aprendizaje máxima para modelos de árboles
+- Número máximo de épocas para TensorFlow / FTRL
+- Max. Profundidad del árbol
+- Max. max_bin para las características del árbol
+- Número máximo de reglas para RuleFit
+- Nivel de conjunto para la tubería de modelado final
+- Validación cruzada del modelo final único
+- Número de modelos durante la fase de ajuste
+- Método de muestreo para problemas de clasificación binaria desequilibrada
+- Umbral para el número mínimo de filas en los datos de entrenamiento originales para permitir técnicas de muestreo desequilibradas. Para datos más pequeños, deshabilitará el muestreo desequilibrado, sin importar en qué método esté configurado el método de muestreo_muestra.
+- Relación de la clase mayoritaria a la minoritaria para la clasificación binaria desequilibrada para activar técnicas de muestreo especiales (si están habilitadas)
+- Relación de la clase mayoritaria a la minoritaria para la clasificación binaria muy desequilibrada para habilitar solo técnicas de muestreo especiales si están habilitadas
+- Número de bolsas para métodos de muestreo para clasificación binaria desequilibrada (si está habilitada)
+- Límite estricto en el número de bolsas para métodos de muestreo para clasificación binaria desequilibrada
+- Límite estricto en el número de bolsas para métodos de muestreo para clasificación binaria desequilibrada durante la fase de evolución de características
+- Tamaño máximo de los datos muestreados durante el muestreo desequilibrado
+- Fracción objetivo de la clase minoritaria después de aplicar técnicas de submuestreo / sobremuestreo
+- Número máximo de términos de interacciones FTRL automáticas para términos de interacciones de segundo, tercer y cuarto orden (cada uno)
+- Habilitar información detallada del modelo puntuado
+- Ya sea para habilitar el muestreo Bootstrap para validación y puntajes de prueba
+- Para problemas de clasificación con tantas clases, predeterminado en TensorFlow
+- Calcular intervalos de predicción
+- Nivel de confianza para los intervalos de predicción
 
-**Features Settings**
-- Feature Engineering Effort
-- Data Distribution Shift Detection
-- Data Distribution Shift Detection Drop of Features
-- Max Allowed Feature Shift (AUC) Before Dropping Feature
-- Leakage Detection
-- Leakage Detection Dropping AUC/R2 Threshold
-- (Max Rows) * (Columns for Leakage)
-- Report Permutation Importance on Original Features
-- Maximum Number of Rows to Perform Permutation-Based Feature Selection
-- Max Number of Original Features Used
-- Max Number of Original Non-Numeric Features
-- Max Number of Original Features Used for FS Individual
-- Number of Original Numeric Features to Trigger Feature Selection Model Type
-- Number of Original Non-Numeric Features to Trigger Feature Selection Model Type
-- Max Allowed Fraction of Uniques for Integer and Categorical Columns
-- Allow treating numerical as categorical
-- Max Number of Unique Values for Int/Float to be Categoricals
-- Max Number of Engineered Features
-- Max. Number of Genes
-- Limit Features by Interpretability
-- Threshold for interpretability above which to enable automatic monotonicity constraints for tree models
-- Correlation Beyond Which Triggers Monotonicity Constraints (if Enabled)
-- Manual override for monotonicity constraints
-- Max Feature Interaction Depth
-- Fixed Feature Interaction Depth
-- Enable Target Encoding (auto disbables for time series)
-- Enable outer CV for Target Encoding
-- Enable Lexicographical Label Encoding
-- Enable Isolation Forest Anomaly Score Encoding
-- Enable One HotEncoding (auto enables only for GLM)
-- Number of Estimators for Isolation Forest Encoding
-- Drop Constant Columns
-- Drop ID Columns
-- Don’t Drop Any Columns
-- Features to Drop, e.g. "V1","V2","V3",
-- Features To Group By, e.g. "G1","G2","G3",
-- Sample From Features To Group By
-- Aggregation Functions (Non-Time-Series) For Group By Operations
-- Number of Folds To Obtain Aggregation When Grouping
-- Type of Mutation Strategy
-- Enable Detailed Scored Features Info
-- Enable Detailed Logs for Timing and Types of Features Produced
-- Compute Correlation Matrix
-- Required GINI relative improvement for Interactions
-- Number of transformed Interactions to make 
+**Features Settings (Configuración de funciones)**
+- Esfuerzo de ingeniería de funciones
+- Detección de cambios de distribución de datos
+- Detección de cambios en la distribución de datos, caída de funciones
+- Cambio de función máximo permitido (AUC) antes de abandonar la función
+- Detección de fugas
+- Detección de fugas que reduce el umbral AUC / R2
+- (Filas máx.) * (Columnas para fugas)
+- Informar sobre la importancia de la permutación en las características originales
+- Número máximo de filas para realizar la selección de funciones basada en permutación
+- Número máximo de funciones originales utilizadas
+- Número máximo de funciones originales no numéricas
+- Número máximo de funciones originales utilizadas para FS Individual
+- Número de características numéricas originales para activar la selección de características Tipo de modelo
+- Número de funciones no numéricas originales para activar el tipo de modelo de selección de función
+- Fracción máxima permitida de únicos para columnas enteras y categóricas
+- Permitir tratar numérico como categórico
+- Número máximo de valores únicos para que Int / Float sean categóricos
+- Número máximo de funciones de ingeniería
+- Max. Número de genes
+- Limitar características por interpretabilidad
+- Umbral de interpretabilidad por encima del cual habilitar restricciones automáticas de monotonicidad para modelos de árboles
+- Correlación más allá de qué desencadena las restricciones de monotonicidad (si está habilitado)
+- Anulación manual para restricciones de monotonicidad
+- Profundidad máxima de interacción de funciones
+- Profundidad de interacción de funciones fijas
+- Habilitar la codificación de destino (se desactiva automáticamente para series de tiempo)
+- Habilitar CV externo para la codificación de destino
+- Habilitar la codificación de etiquetas lexicográficas
+- Habilitar la codificación de puntuación de anomalía del bosque de aislamiento
+- Habilite One HotEncoding (habilita automáticamente solo para GLM)
+- Número de estimadores para la codificación de bosques de aislamiento
+- Soltar columnas constantes
+- Columnas de ID de gota
+- No suelte ninguna columna
+- Funciones para soltar, p. Ej. "V1", "V2", "V3",
+- Funciones para agrupar, p. Ej. "G1", "G2", "G3",
+- Muestra de características para agrupar por
+- Funciones de agregación (no series de tiempo) para operaciones de grupo por
+- Número de pliegues para obtener agregación al agrupar
+- Tipo de estrategia de mutación
+- Habilitar la información detallada de las funciones puntuadas
+- Habilitar registros detallados para el tiempo y los tipos de funciones producidas
+- Calcular matriz de correlación
+- Mejora relativa de GINI requerida para interacciones
+- Número de interacciones transformadas a realizar
 
-**Time Series Settings**
-- Time Series Lag-Based Recipe
-- Custom Validation Splits For Time-Series Experiments
-- Timeout In Seconds For Time-Series Properties Detection in UI
-- Generate Holiday Features
-- List of countries for which to look up holiday calendar and to generate is-Holiday features for
-- Time-Series Lags Override (-1 = auto)
-- Smallest Considered Lag Size
-- Enable Feature Engineering from Time Column
-- Allow Integer Time Column As Numeric Feature
-- Allowed Date and Date-Time Transformations
-- Consider Time Groups Columns as Standalone Features
-- Which TGC Feature Types to Consider as Standalone Features
-- Enable Time Unaware Transformers
-- Always Group by All Time Groups Columns for Creating Lag Features
-- Generate Time-Series Holdout Predictions
-- Number of Time-Based Splits for Internal Model Validation
-- Maximum Overlap Between Two Time-Based Splits
-- Maximum Number of Splits Used for Creating Final Time-Series Model’s Holdout Predictions
-- Whether to Speed Up Calculation Of Time-Series Holdout Predictions
-- Whether to Speed Up Calculation Of Shapley Values for Time-Series Holdout Predictions
-- Generate Shapley Values For Time-Series Holdout Predictions At the Time Of Experiment
-- Lower Limit On Interpretability Setting For Time-Series Experiments, Implicitly Enforced
-- Dropout Mode for Lag Features
-- Probability to Create Non-Target Lag Features
-- Method to Create Rolling Test Set Predictions
-- Rolling method used for GA validation
-- Probability for New Time-Series Transformers to Use Default Lags
-- Probability of Exploring Interaction-Based Lag Transformers
-- Probability of Exploring Aggregation-Based Lag Transformers
-- Time series centering or detrending transformation
-- Custom bounds for SEIRD epidemic model parameters
-- Which SEIRD model component the target column corresponds to: I: Infected, R: Recovered, D: Deceased.
-- Time series log-based target transformation
-- Log size used for time series target transformation
+**Time Series Settings (Configuración de serie temporal)**
+- Receta basada en lag de series temporales
+- Divisiones de validación personalizadas para experimentos de series de tiempo
+- Tiempo de espera en segundos para la detección de propiedades de series temporales en la interfaz de usuario
+- Generar funciones de vacaciones
+- Lista de países para los que buscar el calendario de vacaciones y generar funciones is-Holiday para
+- Anulación de retrasos de serie temporal (-1 = automático)
+- Tamaño de retraso considerado más pequeño
+- Habilitar la ingeniería de funciones desde la columna de tiempo
+- Permitir columna de tiempo entero como característica numérica
+- Transformaciones de fecha y hora permitidas
+- Considere las columnas de grupos de tiempo como funciones independientes
+- Qué tipos de funciones de TGC considerar como funciones independientes
+- Habilitar transformadores inconscientes del tiempo
+- Agrupar siempre por columnas de todos los grupos de tiempo para crear funciones de retraso
+- Generar predicciones de retención de series temporales
+- Número de divisiones basadas en el tiempo para la validación del modelo interno
+- Superposición máxima entre dos divisiones basadas en el tiempo
+- Número máximo de divisiones utilizadas para crear predicciones de exclusión del modelo de serie temporal final
+- Ya sea para acelerar el cálculo de predicciones de retención de series temporales
+- Ya sea para acelerar el cálculo de los valores de Shapley para las predicciones de retención de series temporales
+- Genere valores de Shapley para predicciones de retención de series temporales en el momento del experimento
+- Límite inferior en la configuración de interpretabilidad para experimentos de series de tiempo, impuesta implícitamente
+- Modo de abandono para funciones de retraso
+- Probabilidad de crear funciones de retraso no objetivo
+- Método para crear predicciones de conjuntos de pruebas rodantes
+- Método de laminación utilizado para la validación de GA
+- Probabilidad de que los nuevos transformadores de series temporales utilicen retrasos predeterminados
+- Probabilidad de explorar transformadores de retraso basados ​​en interacción
+- Probabilidad de explorar transformadores de retraso basados ​​en agregación
+- Transformación de centrado o de tendencia de series de tiempo
+- Límites personalizados para los parámetros del modelo de epidemia SEIRD
+- A qué componente del modelo SEIRD corresponde la columna de destino: I: infectado, R: recuperado, D: fallecido.
+- Transformación de destino basada en registros de series de tiempo
+- Tamaño de registro utilizado para la transformación de objetivos de series de tiempo
 
-**NLP Settings**
+**NLP Settings (Configuraciones)**
 
-- Enable Word-Based CNN TensorFlow Models for NLP
-- Enable Word-Based BiGRU TensorFlow Models for NLP
-- Enable Character-Based CNN TensorFlow Models for NLP
-- Enable PyTorch models for NLP (Experimental)
-- Select which pretrained PyTorch NLP model(s) to use
-- Max TensorFlow Epochs for NLP
-- Accuracy Above Enable TensorFlow NLP by Default for All Models
-- Path to Pretrained Embeddings for TensorFlow NLP Models. If empty, will train from scratch.
-- For TensorFlow NLP, allow training of unfrozen pretrained embeddings (in addition to fine-tuning of the rest of the graph)
-- Number of epochs for fine-tuning of PyTorch NLP models
-- Batch size for PyTorch NLP models
-- Maximum sequence length (padding length) for PyTorch NLP models
-- Path to pretrained PyTorch NLP models, If empty, will get models from S3
-- Fraction of Text Columns Out of All Features to be Considered a Text-Dominanted Problem
-- Fraction of Text per All Transformers to Trigger That Text Dominated
-- Threshold for String Columns to be Treated as Text (0.0 - text, 1.0 - string)
+- Habilitar modelos de CNN TensorFlow basados ​​en palabras para PNL
+- Habilitar modelos de BiGRU TensorFlow basados ​​en palabras para NLP
+- Habilitar modelos de CNN TensorFlow basados ​​en caracteres para PNL
+- Habilitar modelos de PyTorch para PNL (experimental)
+- Seleccione qué modelo (s) de PyTorch NLP previamente entrenados usar
+- Max TensorFlow Epochs para PNL
+- Precisión superior Habilita TensorFlow NLP de forma predeterminada para todos los modelos
+- Ruta de inserción preentrenada para modelos de PNL de TensorFlow. Si está vacío, entrenará desde cero.
+- Para TensorFlow NLP, permita el entrenamiento de incrustaciones preentrenadas no congeladas (además del ajuste fino del resto del gráfico)
+- Número de épocas para el ajuste fino de los modelos PyTorch NLP
+- Tamaño de lote para modelos PyTorch NLP
+- Longitud máxima de secuencia (longitud de relleno) para modelos PyTorch NLP
+- Ruta a modelos PyTorch NLP previamente entrenados, si está vacío, obtendrá modelos de S3
+- Una fracción de las columnas de texto de todas las funciones debe considerarse un problema dominado por el texto
+- Fracción de texto por todos los transformadores para activar ese texto dominado
+- Umbral para que las columnas de cadena se traten como texto (0.0 - texto, 1.0 - cadena)
 
-**Image Settings**
 
-- Enable TensorFlow models for processing of image data
-- Supported pretrained image recognition models
-- Dimensionality of feature space created by pretrained (and fine-tuned) TensorFlow image models
-- Enable fine-tuning of the pretrained image models used for the Image Vectorizer transformers
-- Number of epochs for fine-tuning of TensorFlow image models
-- Batch size for TensorFlow image models. Automatic: -1
-- Image download timeout in seconds
-- Max allowed fraction of missing values for image column
-- Min. fraction of images that need to be of valid types for image column to be used
-- Enable GPU(s) for faster predictions witth pretrained TensorFlow models.
+**Image Settings (Configuración de imagen)**
 
-**Recipes Settings**
+- Habilite los modelos de TensorFlow para el procesamiento de datos de imágenes
+- Modelos de reconocimiento de imágenes previamente entrenados compatibles
+- La dimensionalidad del espacio de funciones creado por modelos de imagen de TensorFlow previamente entrenados (y afinados)
+- Habilite el ajuste fino de los modelos de imagen previamente entrenados utilizados para los transformadores Image Vectorizer
+- Número de épocas para el ajuste fino de los modelos de imagen de TensorFlow
+- Tamaño de lote para modelos de imágenes de TensorFlow. Automático: -1
+- Tiempo de espera de descarga de imágenes en segundos
+- Fracción máxima permitida de valores perdidos para la columna de imagen
+- Min. fracción de imágenes que deben ser de tipos válidos para que se utilice la columna de imágenes
+- Habilite las GPU para obtener predicciones más rápidas con modelos de TensorFlow previamente entrenados.
 
-- Include Specific Transformers
-- Include Specific Models
-- Include Specific Scorers
-- Include specific preprocessing transformers
-- Number of pipeline layers
-- Include specific data recipes during experiment
-- Scorer to optimize threshold to be sued in other confusion-matrix based scorers (for binary classification)
-- Probability to Add Transformers
-- Probability to Add Best Shared Transformers
-- Probability to Prune Transformers
-- Probability to Mutate Model Parameters
-- Probability to Prune Weak Features
-- Timeout in Minutes for Testing Acceptance of Each Recipe
-- Whether to Skip Failures of Transformers
-- Whether to Skip Failures of Models
-- Level to Log (0 = simple message, 1 = code line plus message, 2 = detailed stack traces) for Skipped Failures
+**Recipes Settings (Configuración de recetas)**
 
-**System Settings**
+- Incluir transformadores específicos
+- Incluir modelos específicos
+- Incluir goleadores específicos
+- Incluir transformadores de preprocesamiento específicos
+- Número de capas de tubería
+- Incluya recetas de datos específicas durante el experimento
+- Anotador para optimizar el umbral para ser demandado en otros anotadores basados en matriz de confusión (para clasificación binaria)
+- Probabilidad de agregar transformadores
+- Probabilidad de agregar los mejores transformadores compartidos
+- Probabilidad de podar transformadores
+- Probabilidad de mutar los parámetros del modelo
+- Probabilidad de podar características débiles
+- Tiempo de espera en minutos para probar la aceptación de cada receta
+- Ya sea para omitir las fallas de los transformadores
+- Ya sea para omitir fallas de modelos
+- Nivel para registrar (0 = mensaje simple, 1 = línea de código más mensaje, 2 = seguimientos de pila detallados) para fallas omitidas
 
-- Number of Cores to Use (0 = all)
-- Maximum Number of Cores to Use for Model Fit
-- Maximum Number of Cores to Use for Model Predict
-- Maximum Number of Cores to Use for Model Transform and Predict When Doing MLI and Autoreport
-- Tuning Workers per Batch for CPU
-- Num. Works For CPU Training
-- #GPUs/Experiment (-1 = all)
-- Num. Cores/GPU
-- #GPUs/Model (-1 = all)
-- Num. Of GPUs For Isolated Prediction/Transform
-- Max Number of Threads to Use for datatable and OpenBLAS for Munging and Model Training (0 = all, -1 = auto)
-- Max. Num. Of Threads to Use For Datatable Read and Write Of Files (0 = all, -1 = auto)
-- Max. Num. Of Threads To Use For Datatable Stats and Openblas (0 = all, -1 = auto)
-- GPU Starting ID (0..visible #GPUs - 1)
-- Enable Detailed Traces
-- Enable Debug Log Level
-- Enable Logging Of System Information For Each Experiment
+**System Settings (Ajustes del sistema)**
 
-4\. For this experiment turn ON **RuleFit models**, under **Model** tab the select **Save**. 
+- Número de núcleos a utilizar (0 = todos)
+- Número máximo de núcleos a utilizar para el ajuste del modelo
+- Número máximo de núcleos a utilizar para la predicción del modelo
+- Número máximo de núcleos a utilizar para la transformación del modelo y la predicción al realizar MLI y autoinforme
+- Trabajadores de ajuste por lote para CPU
+- Num. Funciona para entrenamiento de CPU
+- #GPU / Experimento (-1 = todos)
+- Num. Núcleos / GPU
+- #GPU / modelo (-1 = todos)
+- Num. De GPU para predicción / transformación aislada
+- Número máximo de subprocesos para usar para la tabla de datos y OpenBLAS para Munging y Model Training (0 = todos, -1 = automático)
+- Max. Num. De subprocesos que se utilizarán para la lectura y escritura de archivos de tablas de datos (0 = todos, -1 = automático)
+- Max. Num. De subprocesos para usar para estadísticas de tabla de datos y Openblas (0 = todo, -1 = automático)
+- ID de inicio de GPU (0..visible #GPUs - 1)
+- Habilitar seguimientos detallados
+- Habilitar nivel de registro de depuración
+- Habilite el registro de información del sistema para cada experimento
 
-The RuleFit[2] algorithm creates an optimal set of decision rules by first fitting a tree model and then fitting a Lasso (L1-regularized) GLM model to create a linear model consisting of the most important tree leaves (rules). The RuleFit model helps with exceeding the accuracy of Random Forests while retaining explainability of decision trees.
+4\. Para este experimento, active **modelos RuleFit**, en la pestaña **Modelo**, seleccione **Guardar**. 
+
+El algoritmo RuleFit [2] crea un conjunto óptimo de reglas de decisión ajustando primero un modelo de árbol y luego ajustando un modelo GLM Lasso (regularizado en L1) para crear un modelo lineal que consta de las hojas de árbol más importantes (reglas). El modelo RuleFit ayuda a superar la precisión de los bosques aleatorios al tiempo que conserva la explicabilidad de los árboles de decisión.
 
 ![expert-settings-rulefit-on](assets/expert-settings-rulefit-on.jpg)
 
-Turning on the RuleFit model will be added to the list of algorithms that Driverless AI will consider for the experiment.  The selection of the algorithm depends on the data and the configuration selected.
+La activación del modelo RuleFit se agregará a la lista de algoritmos que Driverless AI considerará para el experimento. La selección del algoritmo depende de los datos y la configuración seleccionada.
 
-5\. Before selecting **Launch**, make sure that your **Experiment** page looks similar to the one above, once ready, click on **Launch**. 
+5\. Antes de seleccionar **Iniciar (Launch)**, asegúrese de que su página de **Experimento** sea similar a la anterior; una vez que esté lista, haga clic en **Iniciar (Launch)**. 
 
-Learn more about what each setting means and how it can be updated from its default values by visiting H2O’s Documentation- [Expert Settings](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/expert-settings.html?highlight=expert%20settings)
+LObtenga más información sobre lo que significa cada configuración y cómo se puede actualizar desde sus valores predeterminados visitando la Documentación de H2O- [Expert Settings](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/expert-settings.html?highlight=expert%20settings)
 
 ### Resources
 
@@ -484,411 +486,412 @@ Learn more about what each setting means and how it can be updated from its defa
 
 - For more information about additional setting in [Expert Settings for H2O Driverless AI](http://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/expert-settings.html?highlight=expert%20settings)
 
-## Task 3: Experiment Scoring and Analysis Concepts
-
-As we learned in the [Automatic Machine Learning Introduction with Driverless AI](https://training.h2o.ai/products/tutorial-1a-automatic-machine-learning-introduction-with-driverless-ai) it is essential that once a model has been generated that its performance is evaluated. These metrics are used to evaluate the quality of the model that was built and what model score threshold should be used to make predictions. There are multiple metrics for assessing a binary classification machine learning models such as Receiver Operating Characteristics or ROC curve, Precision and Recall or Prec-Recall, Lift, Gain and K-S Charts to name a few. Each metric evaluates different aspects of the machine learning model. The concepts below are for metrics used in H2O’s Driverless AI to assess the performance of classification models that it generated. The concepts are covered at a very high level, to learn more in-depth about each metric covered here we have included additional resources at the end of this task. 
+## Task 3: Experiment Scoring and Analysis Concepts (Conceptos de análisis y puntuación de experimentos)
 
 
-### Binary Classifier
+Como aprendimos en el [Automatic Machine Learning Introduction with Driverless AI](https://training.h2o.ai/products/tutorial-1a-automatic-machine-learning-introduction-with-driverless-ai) Es fundamental que una vez generado un modelo se evalúe su desempeño. Estas métricas se utilizan para evaluar la calidad del modelo que se creó y qué umbral de puntuación del modelo debe utilizarse para hacer predicciones. Hay varias métricas para evaluar modelos de aprendizaje automático de clasificación binaria, como las características operativas del receptor o la curva ROC, la precisión y la recuperación o las gráficas Prec-Recall, Lift, Gain y K-S, por nombrar algunas. Cada métrica evalúa diferentes aspectos del modelo de aprendizaje automático. Los conceptos a continuación son para métricas utilizadas en la IA sin conductor de H2O para evaluar el rendimiento de los modelos de clasificación que generó. Los conceptos están cubiertos a un nivel muy alto, para conocer más en profundidad sobre cada métrica cubierta aquí, hemos incluido recursos adicionales al final de esta tarea.
 
-Let’s take a look at binary classification model. A binary classification model predicts in what two categories(classes) the elements of a given set belong to. In the case of our example, the two categories(classes) are **defaulting** on your home loan and **not defaulting**. The generated model should be able to predict in which category each customer falls under.
+
+### Binary Classifier Clasificador binario
+
+Echemos un vistazo al modelo de clasificación binaria. Un modelo de clasificación binaria predice a qué dos categorías (clases) pertenecen los elementos de un conjunto dado. En el caso de nuestro ejemplo, las dos categorías (clases) **incumplen** su préstamo hipotecario y **no incumplen**. El modelo generado debe poder predecir a qué categoría pertenece cada cliente.
 
 ![binary-output](assets/binary-output.jpg)
 
-However, two other possible outcomes need to be considered, the false negative and false positives. These are the cases that the model predicted that someone did not default on their bank loan and did. The other case is when the model predicted that someone defaulted on their mortgage, but in reality, they did not. The total outcomes are visualized through a confusion matrix, which is the  two by two table seen below:
+Sin embargo, es necesario considerar otros dos resultados posibles, los falsos negativos y los falsos positivos. Estos son los casos en los que el modelo predijo que alguien no incumplió con su préstamo bancario y lo hizo. El otro caso es cuando el modelo predijo que alguien incumplió con su hipoteca, pero en realidad no fue así. Los resultados totales se visualizan a través de una matriz de confusión, que es la tabla de dos por dos que se muestra a continuación:
 
-Binary classifications produce four outcomes: 
+Las clasificaciones binarias producen cuatro resultados: 
 
-**Predicticted as Positive**:
+**Predicticted as Positive (Predicho como positivo)**:
 
-True Positive = TP
+True Positive (Verdadero positivo) = TP
 
-False Positive = FP
+False Positive (Falso positivo)= FP
 
-**Predicted as Negative**:
+**Predicted as Negative (Predicho como negativo)**:
 
-True Negative = TN 
+True Negative (Verdadero negativo)= TN 
 
-False Negative = FN 
+False Negative (Falso negativo)= FN 
 
 ![binary-classifier-four-outcomes](assets/binary-classifier-four-outcomes.jpg)
 
-**Confusion Matrix**:
+**Confusion Matrix (Matriz de confusión)**:
 
 ![confusion-matrix](assets/confusion-matrix.jpg)
 
-From this confusion table, we can measure error-rate, accuracy, specificity, sensitivity, and precision, all useful metrics to test how good our model is at classifying or predicting. These metrics will be defined and explained in the next sections.
+A partir de esta tabla de confusión, podemos medir la tasa de error, la exactitud, la especificidad, la sensibilidad y la precisión, todas métricas útiles para probar qué tan bueno es nuestro modelo para clasificar o predecir. Estas métricas se definirán y explicarán en las siguientes secciones..
 
-On a fun side note, you might be wondering why the name "Confusion Matrix"? Some might say that it's because a confusion matrix can be very confusing. Jokes aside, the confusion matrix is also known as the **error matrix** since it makes it easy to visualize the classification rate of the model including the error rate. The term "confusion matrix" is also used in psychology and the Oxford dictionary defines it as "A matrix representing the relative frequencies with which **each of a number of stimuli is mistaken for each of the others** by a person in a task requiring recognition or identification of stimuli. Analysis of these data allows a researcher to extract factors (2) indicating the underlying dimensions of similarity in the perception of the respondent. For example, in colour-identification tasks, relatively frequent **confusion** of reds with greens would tend to suggest daltonism." [1] In other words, how frequently does a person performing a classification task confuse one item for another. In the case of ML, a machine learning model is implementing the classification and evaluating the frequency in which the model confuses one label from another rather than a human. 
+En una nota al margen divertida, es posible que se pregunte por qué el nombre "Matriz de confusión". Algunos dirán que se debe a que una matriz de confusión puede resultar muy confusa. Dejando de lado las bromas, la matriz de confusión también se conoce como **matriz de error**, ya que facilita la visualización de la tasa de clasificación del modelo, incluida la tasa de error. El término "matriz de confusión" también se utiliza en psicología y el diccionario de Oxford lo define como "Una matriz que representa las frecuencias relativas con las que **cada uno de un número de estímulos se confunde con cada uno de los demás** por una persona en una tarea que requieren reconocimiento o identificación de estímulos. El análisis de estos datos permite al investigador extraer factores (2) que indican las dimensiones subyacentes de similitud en la percepción del encuestado. Por ejemplo, en tareas de identificación de colores, **confusión** relativamente frecuente de los rojos con verdes tenderían a sugerir daltonismo ". [1] En otras palabras, ¿con qué frecuencia una persona que realiza una tarea de clasificación confunde un elemento con otro? En el caso de ML, un modelo de aprendizaje automático está implementando la clasificación y evaluando la frecuencia en la que el modelo confunde una etiqueta de otra en lugar de una humana. 
 
 ### ROC
 
-An essential tool for classification problems is the ROC Curve or Receiver Operating Characteristics Curve. The ROC Curve visually shows the performance of a binary classifier; in other words, it  “tells how much a model is capable of distinguishing between classes” [2] and the corresponding threshold. Continuing with the Freddie Mac example the output variable or the label is whether or not the customer will default on their loan and at what threshold. 
+Una herramienta esencial para los problemas de clasificación es la curva ROC o la curva de características operativas del receptor. La curva ROC muestra visualmente el desempeño de un clasificador binario; en otras palabras, “dice cuánto es capaz un modelo de distinguir entre clases” [2] y el umbral correspondiente. Continuando con el ejemplo de Freddie Mac, la variable de salida o la etiqueta es si el cliente incumplirá o no con su préstamo y en qué umbral.
 
-Once the model has been built and trained using the training dataset, it gets passed through a classification method (Logistic Regression, Naive Bayes Classifier, support vector machines, decision trees, random forest, etc…), this will give the probability of each customer defaulting. 
+Una vez que el modelo se ha construido y entrenado usando el conjunto de datos de entrenamiento, se pasa a través de un método de clasificación (Regresión logística, Clasificador Bayes ingenuo, máquinas de vectores de soporte, árboles de decisión, bosque aleatorio, etc.), esto dará la probabilidad de cada cliente. incumpliendo. 
 
-The ROC curve plots the Sensitivity or true positive rate (y-axis) versus 1-Specificity or false positive rate (x-axis) for every possible classification threshold. A classification threshold or decision threshold is the probability value that the model will use to determine where a class belongs to. The threshold acts as a boundary between classes to determine one class from another. Since we are dealing with probabilities of values between 0 and 1 an example of a threshold can be 0.5. This tells the model that anything below 0.5 is part of one class and anything above 0.5 belongs to a different class. The threshold can be selected to maximize the true positives while minimizing false positives. A threshold is dependent on the scenario that the ROC curve is being applied to and the type of output we look to maximize. Learn more about the application of  threshold and its implications on [Task 6: ER: ROC](#task-6-er-roc).
-
-
-Given our example of use case of predicting loans the following provides a description for the values in the confusion matrix:
-
- - TP = 1 = Prediction matches result that someone did default on a loan
- - TN = 0 = Prediction matches result that someone did not default on a loan
- - FP = 1 = Predicting that someone will default but in actuality they did not default
- - FN = 0 = Predicting that someone did not default on their bank loan but actually did.
+La curva ROC traza la sensibilidad o tasa de verdaderos positivos (eje y) versus 1-especificidad o tasa de falsos positivos (eje x) para cada posible umbral de clasificación. Un umbral de clasificación o umbral de decisión es el valor de probabilidad que utilizará el modelo para determinar a dónde pertenece una clase. El umbral actúa como un límite entre clases para determinar una clase de otra. Dado que estamos tratando con probabilidades de valores entre 0 y 1, un ejemplo de umbral puede ser 0.5. Esto le dice al modelo que cualquier cosa por debajo de 0.5 es parte de una clase y cualquier cosa por encima de 0.5 pertenece a una clase diferente. El umbral se puede seleccionar para maximizar los verdaderos positivos y minimizar los falsos positivos. Un umbral depende del escenario al que se aplica la curva ROC y del tipo de producción que buscamos maximizar. Obtenga más información sobre la aplicación del umbral y sus implicaciones en [Task 6: ER: ROC](#task-6-er-roc).
 
 
-What are sensitivity and specificity? The true positive rate is the ratio of the number of true positive predictions divided by all positive actuals. This ratio is also known as **recall** or **sensitivity**, and it is measured from 0.0 to 1.0 where 0 is the worst and 1.0 is the best sensitivity. Sensitive is a measure of how well the model is predicting for the positive case.
+Dado nuestro ejemplo de caso de uso de predicción de préstamos, a continuación se proporciona una descripción de los valores en la matriz de confusión:
 
-The true negative rate is the ratio of the number of true negative predictions divided by the sum of true negatives and false positives. This ratio is also known as **specificity** and is measured from 0.0 to 1.0 where 0 is the worst and 1.0 is the best specificity. Specificity is a measure for how well the model is predicting for the negative case correctly.  How often is it predicting a negative case correctly.
+ - TP = 1 = Las coincidencias de predicción dan como resultado que alguien incumplió con un préstamo
+ - TN = 0 = Las coincidencias de predicción dan como resultado que alguien no incumplió con un préstamo
+ - FP = 1 = Predecir que alguien incurrirá en incumplimiento pero en realidad no lo hizo
+ - FN = 0 = Predecir que alguien no incumplió con su préstamo bancario, pero sí lo hizo.
 
-The false negative rate is *1 - Sensitivity*, or the ratio of false negatives divided by the sum of the true positives and false negatives [3]. 
 
-The following image provides an illustration of the ratios for sensitivity, specificity and false negative rate. 
+¿Qué son la sensibilidad y la especificidad? La tasa de verdaderos positivos es la relación entre el número de predicciones positivas verdaderas dividido por todos los valores reales positivos. Esta relación también se conoce como **recuerdo** o **sensibilidad**, y se mide de 0.0 a 1.0, donde 0 es la peor y 1.0 es la mejor sensibilidad. Sensible es una medida de qué tan bien está prediciendo el modelo para el caso positivo.
+
+La tasa de verdaderos negativos es la razón del número de verdaderas predicciones negativas dividida por la suma de verdaderos negativos y falsos positivos. Esta relación también se conoce como ** especificidad ** y se mide de 0,0 a 1,0, donde 0 es la peor y 1,0 es la mejor especificidad. La especificidad es una medida de qué tan bien el modelo predice correctamente el caso negativo. ¿Con qué frecuencia predice correctamente un caso negativo?.
+
+La tasa de falsos negativos es * 1 - Sensibilidad *, o la proporción de falsos negativos dividida por la suma de los verdaderos positivos y falsos negativos [3]. 
+
+La siguiente imagen proporciona una ilustración de las proporciones de sensibilidad, especificidad y tasa de falsos negativos. 
 
 ![sensitivity-and-specificity](assets/sensitivity-and-specificity.jpg)
 
-**Recall** = **Sensitivity** = True Positive Rate = TP / (TP + FN)
+**Recall (Recordar)** = **Sensitivity (Sensibilidad)** = True Positive Rate (True Positive Rate) = TP / (TP + FN)
 
-**Specificity** = True Negative Rate = TN / (FP + TN)
+**Specificity (Especificidad)** = True Negative Rate (Tasa negativa verdadera) = TN / (FP + TN)
 
 ![false-positive-rate](assets/false-positive-rate.jpg)
 
-**1 - Specificity** =  False Positive Rate = 1 - True Negative Rate = FP / (FP + TN )
+**1 - Specificity Especificidad** =  False Positive Rate (Tasa de falsos positivos)= 1 - True Negative Rate (Tasa negativa)= FP / (FP + TN )
 
-A ROC Curve is also able to tell you how well your model did by quantifying its performance. The scoring is determined by the percent of the area that is under the ROC curve otherwise known as Area Under the Curve or AUC. 
+Una curva ROC también puede decirle qué tan bien le fue a su modelo cuantificando su rendimiento. La puntuación se determina por el porcentaje del área que está debajo de la curva ROC, también conocida como Área debajo de la curva o AUC. 
 
-Below are four types of ROC Curves with its AUC:
+A continuación se muestran cuatro tipos de curvas ROC con su AUC:
 
-**Note:** The closer the ROC Curve is to the left ( the bigger the AUC percentage), the better the model is at separating between classes. 
+**Note:** Cuanto más cerca esté la curva ROC a la izquierda (cuanto mayor sea el porcentaje de AUC), mejor será el modelo para separar las clases. 
 
-The Perfect ROC Curve (in red) below can separate classes with 100% accuracy and has an AUC of 1.0  (in blue):
+La curva ROC perfecta (en rojo) a continuación puede separar clases con un 100% de precisión y tiene un AUC de 1.0 (en azul):
 
 ![roc-auc-1](assets/roc-auc-1.jpg)  			
 
-The ROC Curve below is very close to the left corner, and therefore it does a good job in separating classes with an AUC of 0.7 or 70%:
+La curva ROC a continuación está muy cerca de la esquina izquierda y, por lo tanto, hace un buen trabajo al separar clases con un AUC de 0,7 o 70%:
 
 ![roc-auc-07](assets/roc-auc-07.jpg)
 
-In the case above 70% of the cases the model correctly predicted the positive and negative outcome and 30% of the cases it did some mix of FP or FN.
+En el caso por encima del 70% de los casos, el modelo predijo correctamente el resultado positivo y negativo y el 30% de los casos hizo alguna combinación de FP o FN.
 
-This ROC Curve lies on the diagonal line that splits the graph in half. Since it is further away from the left corner, it does a very poor job at distinguishing between classes, this is the worst case scenario, and it has an AUC of .05 or 50%:
+Esta curva ROC se encuentra en la línea diagonal que divide el gráfico por la mitad. Dado que está más alejado de la esquina izquierda, hace un trabajo muy pobre en la distinción entre clases, este es el peor de los casos y tiene un AUC de .05 o 50%:
 
 ![roc-auc-05](assets/roc-auc-05.jpg)
 
-An AUC of 0.5, tells us that our model is as good as a random model that has a 50% chance of predicting the outcome. Our model is not better than flipping a coin, 50% of the time the model can correctly predict the outcome. 
+Un AUC de 0.5 nos dice que nuestro modelo es tan bueno como un modelo aleatorio que tiene un 50% de probabilidad de predecir el resultado. Nuestro modelo no es mejor que lanzar una moneda, el 50% de las veces el modelo puede predecir correctamente el resultado. 
 
-Finally, the ROC Curve below represents another perfect scenario! When the ROC curve lies below the 50% model or the random chance model, then the model needs to be reviewed carefully. The reason for this is that there could have been potential mislabeling of the negatives and positives which caused the values to be reversed and hence the ROC curve is below the random chance model. Although this ROC Curve looks like it has an AUC of 0.0 or 0% when we flip it we get an AUC of 1 or 100%.
+Finalmente, la curva ROC a continuación representa otro escenario perfecto. Cuando la curva ROC se encuentra por debajo del modelo del 50% o del modelo de probabilidad aleatoria, el modelo debe revisarse cuidadosamente. La razón de esto es que podría haber habido un etiquetado incorrecto de los negativos y positivos, lo que provocó que los valores se invirtieran y, por lo tanto, la curva ROC esté por debajo del modelo de probabilidad aleatoria. Aunque esta curva ROC parece que tiene un AUC de 0.0 o 0% cuando la volteamos, obtenemos un AUC de 1 o 100%.
 
 ![roc-auc-0](assets/roc-auc-0.jpg)
 
-A ROC curve is a useful tool because it only focuses on how well the model was able to distinguish between classes. “AUC’s can help represent the probability that the classifier will rank a randomly selected positive observation higher than a randomly selected negative observation” [4]. However, for models where the prediction happens rarely a high AUC could provide a false sense that the model is correctly predicting the results.  This is where the notion of precision and recall become important.
+Una curva ROC es una herramienta útil porque solo se enfoca en qué tan bien el modelo pudo distinguir entre clases. “Las AUC pueden ayudar a representar la probabilidad de que el clasificador clasifique una observación positiva seleccionada al azar más alta que una observación negativa seleccionada al azar” [4]. Sin embargo, para los modelos en los que la predicción ocurre raramente, un AUC alto podría proporcionar una sensación falsa de que el modelo está prediciendo correctamente los resultados. Aquí es donde la noción de precisión y recuerdo se vuelve importante.
 
-### Applicability of ROC Curves in the Real World
+### Aplicabilidad de las curvas ROC en el mundo real
 
-ROC and AUC curves are important evaluation metrics for calculating the performance of any classification model. In hopes of understanding the applicability of ROC curves, consider the next ROC curves with its AUC and smooth histograms from a binary classifier model trying to make the following point: 
+Las curvas ROC y AUC son métricas de evaluación importantes para calcular el rendimiento de cualquier modelo de clasificación. Con la esperanza de comprender la aplicabilidad de las curvas ROC, considere las siguientes curvas ROC con su AUC y suavice los histogramas de un modelo de clasificador binario tratando de establecer el siguiente punto: 
 
-**Task**: Identify the most effective ROC Curve that will distinguish between green and red apples. 
+**Task**: Identificar la curva ROC más efectiva que distinguirá entre manzanas verdes y rojas. 
 
-Below are three types of ROC Curves in correlation to finding the perfect ROC that will distinguish between red and green apples. 
+A continuación se muestran tres tipos de curvas ROC en correlación con la búsqueda de la ROC perfecta que distinguirá entre manzanas rojas y verdes.
 
-As noted above, the closer the ROC curve is to the left (the more significant the AUC percentage), the better the model is at separating classes. 
+Como se señaló anteriormente, cuanto más cerca esté la curva ROC a la izquierda (cuanto más significativo sea el porcentaje de AUC), mejor será el modelo para separar clases.
 
-*Note*: Before moving forward, it's essential to clarify that the smooth histograms plotted are the result of previous data. Such data has determined that apples with more than 50% (threshold) of its body being red will be considered a red apple. Therefore, anything below 50% will be a green apple.
+*Nota*: Antes de seguir adelante, es esencial aclarar que los histogramas suaves trazados son el resultado de datos anteriores. Estos datos han determinado que las manzanas con más del 50% (umbral) de su cuerpo rojo se considerarán manzanas rojas. Por lo tanto, cualquier cosa por debajo del 50% será una manzana verde.
 
 
-#### ROC One: 
+#### ROC One (ROC Uno): 
 
 ![ROC-1](assets/ROC-1.jpg)
 
-In this case, the above smooth Histogram (1A) is telling us that the distribution will be as follows: 
+En este caso, el histograma suave anterior (1A) nos dice que la distribución será la siguiente:
 
-The green bell curve represents green apples while the red bell curve represents the red apples and the threshold will be at 50%. The x-axis represents the predicted probabilities, while the y-axis represents the count of observations.
+La curva de campana verde representa las manzanas verdes, mientras que la curva de campana roja representa las manzanas rojas y el umbral será del 50%. El eje x representa las probabilidades predichas, mientras que el eje y representa el recuento de observaciones.
 
- From general observations, we can see that the smooth Histogram shows that the current classifier can distinguish between red and green apples only 50% of the time, and such distinction is at the 0.5 thresholds. 
+ A partir de observaciones generales, podemos ver que el histograma suave muestra que el clasificador actual puede distinguir entre manzanas rojas y verdes solo el 50% del tiempo, y esa distinción se encuentra en el umbral de 0,5. 
 
-When we draw the ROC Curve (1B) for the smooth Histogram above, we will get the following results: 
+Cuando dibujamos la curva ROC (1B) para el histograma suave anterior, obtendremos los siguientes resultados:
 
-The ROC Curve is telling us how good the model is at distinguishing between two classes: in this case, we refer to red and green apples as the two classes. When looking at the ROC Curve, it will have an AUC of 1 (in blue). Hence, as discussed earlier, an AUC of one will tell us that the model is performing at 100% (perfect performance). Although, not always the case. We can have a ROC Curve of zero, and if we flip the curve, it can give us a ROC of one; that is why we always need to review the model carefully. 
+La curva ROC nos dice qué tan bueno es el modelo para distinguir entre dos clases: en este caso, nos referimos a las manzanas rojas y verdes como las dos clases. Al mirar la curva ROC, tendrá un AUC de 1 (en azul). Por lo tanto, como se discutió anteriormente, un AUC de uno nos dirá que el modelo está funcionando al 100% (rendimiento perfecto). Aunque no siempre es así. Podemos tener una Curva ROC de cero, y si volteamos la curva, puede darnos una ROC de uno; es por eso que siempre debemos revisar el modelo detenidamente.
 
-Accordingly, this ROC Curve is telling us that the classifier model can distinguish between red and green apples 100% of all cases when it has to identify. Consequently, the random model becomes absolute. For reference, the random model (dash line) essentially represents a classifier that does not do better than random guessing. 
+En consecuencia, esta Curva ROC nos dice que el modelo de clasificador puede distinguir entre manzanas rojas y verdes el 100% de todos los casos en los que tiene que identificar. En consecuencia, el modelo aleatorio se vuelve absoluto. Como referencia, el modelo aleatorio (línea de trazos) esencialmente representa un clasificador que no funciona mejor que adivinar al azar.
 
-Therefore, the ROC Curve for this smooth Histogram will be perfect because it can separate red and green apples. 
+Por lo tanto, la curva ROC para este histograma suave será perfecta porque puede separar manzanas rojas y verdes. 
 
-#### ROC Two: 
+#### ROC Two (ROC DOS): 
 
 ![ROC-2](assets/ROC-2.jpg)
 
-When we draw the ROC curve (2B) for the smooth Histogram (2A) above, we will get the following results: 
+Cuando dibujamos la curva ROC (2B) para el histograma suave (2A) anterior, obtendremos los siguientes resultados:
 
-When looking at the ROC Curve, it will have an AUC of .7 (in blue). 
+Al mirar la curva ROC, tendrá un AUC de 0,7 (en azul).
 
-Accordingly, this ROC curve tells us that the classifier model can't adequately distinguish between red and green apples 100% of all cases. And in a way, this classifier gets closer to the random model that does not do better than random guessing. 
+En consecuencia, esta curva ROC nos dice que el modelo de clasificador no puede distinguir adecuadamente entre manzanas rojas y verdes el 100% de todos los casos. Y de alguna manera, este clasificador se acerca al modelo aleatorio que no funciona mejor que adivinar al azar.
 
-Therefore, this ROC curve is not perfect at classifying red and green apples. That is not to say that the ROC curve is entirely wrong; it just has a 30% margin of error. 
+Por lo tanto, esta curva ROC no es perfecta para clasificar manzanas rojas y verdes. Eso no quiere decir que la curva ROC sea completamente incorrecta; solo tiene un margen de error del 30%. 
 
-#### ROC Three: 
+#### ROC Three (ROC TRES): 
 
 ![ROC-3](assets/ROC-3.jpg)
 
-When we draw the ROC curve (3B) for the smooth Histogram (3A) above, we will get the following results: 
+Cuando dibujamos la curva ROC (3B) para el histograma suave (3A) anterior, obtendremos los siguientes resultados:
 
-When looking at the ROC Curve, it will have an AUC of .5 (in blue). 
+Al mirar la curva ROC, tendrá un AUC de .5 (en azul).
 
-Accordingly, this ROC curve tells us that the classifier model can't adequately distinguish between red and green apples 100% of all cases. In a way, this classifier becomes similar to the random model that does not do better than random guessing. 
+En consecuencia, esta curva ROC nos dice que el modelo de clasificador no puede distinguir adecuadamente entre manzanas rojas y verdes el 100% de todos los casos. En cierto modo, este clasificador se vuelve similar al modelo aleatorio que no funciona mejor que adivinar al azar.
 
-Therefore, this ROC curve is not perfect at classifying red and green apples. That is not to say that the ROC curve is entirely wrong; it has a 50% margin of error. 
+Por lo tanto, esta curva ROC no es perfecta para clasificar manzanas rojas y verdes. Eso no quiere decir que la curva ROC sea completamente incorrecta; tiene un margen de error del 50%.
 
 #### Conclusion
 
-In this case, we will choose the first ROC Curve (with a great classifier) because it leads to an AUC of 1.0 (can separate the green apple class and red apple class (the two classes) with 100% accuracy). 
+En este caso, elegiremos la primera curva ROC (con un gran clasificador) porque conduce a un AUC de 1.0 (puede separar la clase manzana verde y la clase manzana roja (las dos clases) con 100% de precisión). 
 
 ### Prec-Recall
 
-The Precision-Recall Curve or Prec-Recall or **P-R** is another tool for evaluating classification models that is derived from the confusion matrix. Prec-Recall is a complementary tool to ROC curves, especially when the dataset has a significant skew. The Prec-Recall curve plots the precision or positive predictive value (y-axis) versus sensitivity or true positive rate (x-axis) for every possible classification threshold. At a high level, we can think of precision as a measure of exactness or quality of the results while recall as a measure of completeness or quantity of the results obtained by the model. Prec-Recall measures the relevance of the results obtained by the model.
+La curva Precision-Recall o Prec-Recall o **P-R** es otra herramienta para evaluar modelos de clasificación que se deriva de la matriz de confusión. Prec-Recall es una herramienta complementaria a las curvas ROC, especialmente cuando el conjunto de datos tiene un sesgo significativo. La curva Prec-Recall traza la precisión o el valor predictivo positivo (eje y) frente a la sensibilidad o la tasa de verdadero positivo (eje x) para cada posible umbral de clasificación. En un nivel alto, podemos pensar en la precisión como una medida de exactitud o calidad de los resultados mientras recordamos como una medida de integridad o cantidad de los resultados obtenidos por el modelo. Prec-Recall mide la relevancia de los resultados obtenidos por el modelo.
 
-**Precision** is the ratio of correct positive predictions divided by the total number of positive predictions. This ratio is also known as **positive predictive value** and is measured from 0.0 to 1.0, where 0.0 is the worst and 1.0 is the best precision. Precision is more focused on the positive class than in the negative class, it actually measures the probability of correct detection of positive values (TP and FP). 
+**Precisión** es la proporción de predicciones positivas correctas dividida por el número total de predicciones positivas. Esta relación también se conoce como ** valor predictivo positivo ** y se mide de 0.0 a 1.0, donde 0.0 es la peor y 1.0 es la mejor precisión. La precisión se centra más en la clase positiva que en la clase negativa, en realidad mide la probabilidad de detección correcta de valores positivos (TP y FP). 
  
-**Precision** = True positive predictions / Total number of positive predictions = TP  / (TP + FP)
+**Precision** = Predicciones positivas verdaderas / Número total de predicciones positivas = TP  / (TP + FP)
 
-As mentioned in the ROC section, **Recall** is the true positive rate which is the ratio of the number of true positive predictions divided by all positive actuals. Recall is a metric of the actual positive predictions. It tells us how many correct positive results occurred from all the positive samples available during the test of the model.
+Como se mencionó en la sección ROC, **Recordar** es la tasa de verdaderos positivos, que es la razón del número de predicciones positivas verdaderas dividido por todos los valores reales positivos. El recuerdo es una métrica de las predicciones positivas reales. Nos dice cuántos resultados positivos correctos se produjeron de todas las muestras positivas disponibles durante la prueba del modelo..
 
-**Recall** = **Sensitivity** = True Positive Rate = TP / (TP + FN)
+**Recall** = **Sensibilidad** = Tasa de verdaderos positivos = TP / (TP + FN)
 
 ![precision-recall](assets/precision-recall.jpg)
 
-Below is another way of visualizing Precision and Recall, this image was borrowed from [https://commons.wikimedia.org/wiki/File:Precisionrecall.svg](https://commons.wikimedia.org/wiki/File:Precisionrecall.svg).
+A continuación se muestra otra forma de visualizar Precision y Recall, esta imagen fue tomada de [https://commons.wikimedia.org/wiki/File:Precisionrecall.svg](https://commons.wikimedia.org/wiki/File:Precisionrecall.svg).
 
 ![prec-recall-visual](assets/prec-recall-visual.jpg)
 
-A Prec-Recall Curve is created by connecting all precision-recall points through non-linear interpolation [5]. The Pre-Recall plot is broken down into two sections, “Good” and “Poor” performance. “Good” performance can be found on the upper right corner of the plot and “Poor” performance on the lower left corner, see the image below to view the perfect Pre-Recall plot. This division is generated by the baseline. The baseline for Prec-Recall is determined by the ratio of Positives(P) and Negatives(N), where y = P/(P+N), this function represents a classifier with a random performance level[6]. When the dataset is balanced, the value of the baseline is y = 0.5. If the dataset is imbalanced where the number of P’s is higher than N’s then the baseline will be adjusted accordingly and vice versa.
+Una curva de recuperación de precisión se crea conectando todos los puntos de recuperación de precisión mediante interpolación no lineal [5]. El gráfico de pre-recuperación se divide en dos secciones, rendimiento "bueno" y "pobre". Se puede encontrar un rendimiento "bueno" en la esquina superior derecha del gráfico y un rendimiento "deficiente" en la esquina inferior izquierda. Consulte la imagen de abajo para ver el gráfico pre-recuperación perfecto. Esta división es generada por la línea de base. La línea de base para Prec-Recall está determinada por la relación de Positivos (P) y Negativos (N), donde y = P / (P + N), esta función representa un clasificador con un nivel de desempeño aleatorio [6]. Cuando el conjunto de datos está equilibrado, el valor de la línea de base es y = 0,5. Si el conjunto de datos está desequilibrado donde el número de P es mayor que N, la línea de base se ajustará en consecuencia y viceversa.
 
-The Perfect Prec-Recall Curve is a combination of two straight lines (in red). The plot tells us that the model made no prediction errors! In other words, no false positives (perfect precision) and no false negatives (perfect recall) assuming a baseline of 0.5. 
+La curva Perfect Prec-Recall es una combinación de dos líneas rectas (en rojo). ¡La gráfica nos dice que el modelo no cometió errores de predicción! En otras palabras, sin falsos positivos (precisión perfecta) ni falsos negativos (recuerdo perfecto) asumiendo una línea de base de 0.5. 
 
 ![prec-recall-1](assets/prec-recall-1.jpg)
 
-Similarly to the ROC curve, we can use the area under the curve or AUC to help us compare the performance of the model with other models. 
+De manera similar a la curva ROC, podemos usar el área bajo la curva o AUC para ayudarnos a comparar el desempeño del modelo con otros modelos.
 
-**Note:** The closer the Prec-Recall Curve is to the upper-right corner (the bigger the AUC percentage) the better the model is at correctly predicting the true positives. 
+**Nota:** Cuanto más cerca esté la curva de recuperación previa de la esquina superior derecha (cuanto mayor sea el porcentaje de AUC), mejor será el modelo para predecir correctamente los verdaderos positivos.
 
-This Prec-Recall Curve in red below has an AUC of approximately 0.7 (in blue) with a relative baseline of 0.5:
+Esta curva de recuperación previa en rojo a continuación tiene un AUC de aproximadamente 0,7 (en azul) con una línea de base relativa de 0,5:
 
 ![prec-recall-07](assets/prec-recall-07.jpg)
 
-Finally, this Prec-Recall Curve represents the worst case scenario where the model is generating 100% false positives and false negatives. This Prec-Recall Curve has an AUC of 0.0 or 0%:
+Finalmente, esta curva de recuperación previa representa el peor escenario en el que el modelo genera un 100% de falsos positivos y falsos negativos. Esta curva de recuperación previa tiene un AUC de 0.0 o 0%:
 
 ![prec-recall-00](assets/prec-recall-00.jpg)
 
-From the Prec-Recall plot some metrics are derived that can be helpful in assessing the model’s performance, such as accuracy and Fᵦ scores.These metrics will be explained in more depth in the next section of the concepts. Just note that accuracy or ACC is the ratio number of correct predictions divided by the total number of predictions and Fᵦ is the harmonic mean of recall and precision.
+De la gráfica Prec-Recall se derivan algunas métricas que pueden ser útiles para evaluar el desempeño del modelo, como la precisión y las puntuaciones Fᵦ. Estas métricas se explicarán con más profundidad en la siguiente sección de los conceptos. Solo tenga en cuenta que la precisión o ACC es el número de razón de predicciones correctas dividido por el número total de predicciones y Fᵦ es la media armónica de recuperación y precisión.
 
-When looking at ACC in Prec-Recall precision is the positive observations imperative to note that ACC does not perform well-imbalanced datasets. This is why the **F-scores** can be used to account for the skewed dataset in Prec-Recall. 
+Al mirar ACC en Prec-Recall, la precisión de las observaciones positivas es imperativo para tener en cuenta que ACC no realiza conjuntos de datos bien desequilibrados. Esta es la razón por la que las **puntuaciones F** se pueden usar para tener en cuenta el conjunto de datos sesgado en Prec-Recall.. 
 
-As you consider the accuracy of a model for the positive cases you want to know a couple of things:
+AAl considerar la precisión de un modelo para los casos positivos, desea saber un par de cosas:
 
-- How often is it correct?
-- When is it wrong? Why?
-- Is it because you have too many false positives? (Precision)
-- Or is it because you have too many false negatives?  (Recall)
+- ¿Con qué frecuencia es correcto?
+- ¿Cuándo está mal? ¿Por qué?
+- ¿Es porque tienes demasiados falsos positivos? (Precisión)
+- ¿O es porque tienes demasiados falsos negativos? (Recordar)
 
-There are also various  Fᵦ scores that can be considered, F1, F2 and F0.5.  The 1, 2 and 0.5 are the weights given to recall and precision. F1 for instance  means that both precision and recall have equal weight, while F2 gives recall higher weight than precision and F0.5 gives precision higher weight than recall.
+También hay varias puntuaciones Fᵦ que se pueden considerar, F1, F2 y F0.5. El 1, 2 y 0.5 son los pesos dados para recordar y precisar. F1, por ejemplo, significa que tanto la precisión como la recuperación tienen el mismo peso, mientras que F2 otorga a la recuperación un peso mayor que la precisión y F0.5 otorga a la precisión un peso mayor que la recuperación.
 
-Prec-Recall is a good tool to consider for classifiers because it is a great alternative for large skews in the class distribution. Use precision and recall to focus on small positive class — When the positive class is smaller and the ability to detect correctly positive samples is our main focus (correct detection of negatives examples is less important to the problem) we should use precision and recall.
+Prec-Recall es una buena herramienta a tener en cuenta para los clasificadores porque es una gran alternativa para grandes sesgos en la distribución de clases. Utilice la precisión y la recuperación para centrarse en la clase positiva pequeña: cuando la clase positiva es más pequeña y la capacidad de detectar muestras positivas correctamente es nuestro enfoque principal (la detección correcta de ejemplos negativos es menos importante para el problema), debemos utilizar la precisión y la recuperación.
 
-If you are using a model metric of Accuracy and you see issues with Prec-Recall then you might consider using a model metric of logloss.
+Si está utilizando una métrica de modelo de precisión y ve problemas con Prec-Recall, entonces podría considerar usar una métrica de modelo de logloss
 
-#### Applicability of Precision-Recall Curves in the Real World 
+#### Aplicabilidad de las curvas de recuperación de precisión en el mundo real
 
-In hopes of understanding the applicability of Precision-Recall Curves in the real world, let us see how we can make use of Precision-Recall curves as a metric to check the performance of the binary classification model used above to distinguish between green and red apples.
+Con la esperanza de comprender la aplicabilidad de las curvas de recuperación de precisión en el mundo real, veamos cómo podemos hacer uso de las curvas de recuperación de precisión como métrica para verificar el rendimiento del modelo de clasificación binaria utilizado anteriormente para distinguir entre manzanas verdes y rojas. .
 
-As mentioned above, Positive Predictive Value refers to Precision. Let us reimagine again that we are in an apple factory trying to build a model that will be able to distinguish between red and green apples. Therefore, the purpose of this model will be not to have red apple boxes contain green apples and vice versa. Accordingly, this will be a binary classification problem in which the dependent variable is 0 or 1—either a green apple, 0, or 1, a red apple. In this circumstance, Precision will be the proportion of our predictive model noted as red apples. 
+Como se mencionó anteriormente, el valor predictivo positivo se refiere a la precisión. Reinventemos de nuevo que estamos en una fábrica de manzanas intentando construir un modelo que sea capaz de distinguir entre manzanas rojas y verdes. Por tanto, el objetivo de este modelo será que las cajas de manzanas rojas no contengan manzanas verdes y viceversa. En consecuencia, este será un problema de clasificación binaria en el que la variable dependiente es 0 o 1, ya sea una manzana verde, 0 o 1, una manzana roja. En esta circunstancia, Precision será la proporción de nuestro modelo predictivo señalada como manzanas rojas. 
 
-With that in mind, we will follow to calculate precision as follows: 
+Con eso en mente, seguiremos para calcular la precisión de la siguiente manera: 
 
-Precision = True Positive / (True Positive + False Positive) 
+Precisión = Verdadero Positivo / (Verdadero Positivo + Falso Positivo) 
 
-* True Positive = Number of apples which were red that we correctly predicted as red. 
-* False Positive = Number of apples that were green that we incorrectly predicted as red. 
+* Verdadero Positivo = Número de manzanas rojas que predijimos correctamente como rojas. 
+* Falso positivo = Número de manzanas verdes que predijimos incorrectamente como rojas. 
 
-Recall (sensitivity) will specify the proportion of red apples that were predicted by us as red apples. 
+Recall (sensibilidad) especificará la proporción de manzanas rojas que predijimos como manzanas rojas.
 
-The recall will be calculated as follows: 
+El retiro se calculará de la siguiente manera:
 
-Recall = True Positive / (True Positive + False Negative) 
+Recordar = Verdadero Positivo / (Verdadero Positivo + Falso Negativo)
 
-* True Positive: Number of apples that were red that we correctly predicted as red.
+* Verdadero Positivo: Número de manzanas rojas que predijimos correctamente como rojas.
 
-* False Negative: Number of apples that were red that we incorrectly predicted as green apples. 
+* Falso Negativo: Número de manzanas rojas que predijimos incorrectamente como manzanas verdes.
 
-Hence, the main difference between Precision and Recall is the denominator in the Precision and Recall fraction. In Re-call, false negatives are included, whereas, in Precision, false positives are considered.
+Por lo tanto, la principal diferencia entre Precision y Recall es el denominador en la fracción Precision and Recall. En Re-call, se incluyen los falsos negativos, mientras que, en Precision, se consideran los falsos positivos.
 
-#### Difference between Precision and Recall
+#### Diferencia entre precisión y recuperación
 
-Let's assume there is a total of 1000 apples. Out of 1000, 500 apples are actually red. Out of 500, we correctly predicted 400 of them as red. 
+Supongamos que hay un total de 1000 manzanas. De 1000, 500 manzanas son realmente rojas. De 500, predijimos correctamente 400 de ellos como rojos.
 
-* Recall would be 80% 
-* 400/500 = 0.8
+* La recuperación sería del 80%
+* 400/500 = 0,8
 
-For Precision, the following will be true: out of 1000 apples, we predicted 800 as red apples. Out of 800, we correctly predicted 400 of them as red apples. 
+Para Precision, lo siguiente será cierto: de 1000 manzanas, predijimos 800 como manzanas rojas. De 800, predijimos correctamente 400 de ellas como manzanas rojas.
 
-* Precision would be 50%. 
-* 400/800 = 0.5 
+* La precisión sería del 50%.
+* 400/800 = 0,5
 
-To further understand these two ideas of Recall and Precision, imagine for a moment one of your high school teachers asking you about the dates of four main holidays - Halloween, Christmas, New Year, and Memorial Day. You manage to recall all these four dates but with twenty attempts in total. Your Recall score will be 100%, but your Precision score will be 20%, which is four divided by twenty. 
+Para comprender mejor estas dos ideas de memoria y precisión, imagina por un momento a uno de tus profesores de secundaria preguntándote sobre las fechas de los cuatro días festivos principales: Halloween, Navidad, Año Nuevo y Día de los Caídos. Te las arreglas para recordar todas estas cuatro fechas, pero con veinte intentos en total. Su puntuación de recuperación será del 100%, pero su puntuación de precisión será del 20%, que es cuatro dividido por veinte.
 
-It is important to note that after you calculate Recall and Precision values from various confusion matrices for different thresholds, and you plot the results on a Precision-Recall curve take into consideration the following: 
+Es importante tener en cuenta que después de calcular los valores de recuperación y precisión de varias matrices de confusión para diferentes umbrales, y trazar los resultados en una curva de recuperación de precisión, tenga en cuenta lo siguiente:
 
-- As mentioned above, the closer the Precision-Recall curve is to the upper right corner (the bigger the AUC percentage), the better the model is at correctly predicting the true positives. 
-- The x-axis will show Recall while the y-axis will represent the Precision.
-- Therefore, Precision_Recall curves can clearly show the relationship and tradeoff of having a higher or lower threshold. 
-
-
-In conclusion, Precision-Recall curves allow for a more in-depth analysis of binary classification models. And when trying to distinguish between red and green apples. 
+- Como se mencionó anteriormente, cuanto más cerca esté la curva Precision-Recall de la esquina superior derecha (cuanto mayor sea el porcentaje de AUC), mejor será el modelo para predecir correctamente los verdaderos positivos.
+- El eje x mostrará Recuperar mientras que el eje y representará la Precisión.
+- Por lo tanto, las curvas Precision_Recall pueden mostrar claramente la relación y la compensación de tener un umbral más alto o más bajo.
 
 
-### GINI, ACC, F1 F0.5, F2, MCC and Log Loss
+En conclusión, las curvas Precision-Recall permiten un análisis más profundo de los modelos de clasificación binaria. Y al intentar distinguir entre manzanas rojas y verdes.
 
-ROC and Prec-Recall curves are extremely useful to test a binary classifier because they provide visualization for every possible classification threshold. From those plots we can derive single model metrics (e.g. ACC, F1, F0.5, F2 and MCC). There are also other single metrics that can be used concurrently to evaluate models such as GINI and Log Loss. The following will be a discussion about the model scores,  ACC, F1, F0.5, F2, MCC, GINI and Log Loss. The model scores are what the ML model optimizes on.
+
+### GINI, ACC, F1 F0.5, F2, MCC y Log Loss (Pérdida de registro)
+
+Las curvas ROC y Prec-Recall son extremadamente útiles para probar un clasificador binario porque proporcionan visualización para cada posible umbral de clasificación. De esos gráficos podemos derivar métricas de un solo modelo (por ejemplo, ACC, F1, F0.5, F2 y MCC). También hay otras métricas únicas que se pueden usar simultáneamente para evaluar modelos como GINI y Log Loss. La siguiente será una discusión sobre las puntuaciones del modelo, ACC, F1, F0.5, F2, MCC, GINI y Log Loss (Pérdida de registro). Las puntuaciones del modelo son lo que optimiza el modelo ML.
 
 #### GINI
 
-The Gini index is a well-established method to quantify the inequality among values of frequency distribution and can be used to measure the quality of a binary classifier. A Gini index of zero expresses perfect equality (or a totally useless classifier), while a Gini index of one expresses maximal inequality (or a perfect classifier).
+El índice de Gini es un método bien establecido para cuantificar la desigualdad entre los valores de la distribución de frecuencias y se puede utilizar para medir la calidad de un clasificador binario. Un índice de Gini de cero expresa una igualdad perfecta (o un clasificador totalmente inútil), mientras que un índice de Gini de uno expresa una desigualdad máxima (o un clasificador perfecto).
 
 **GINI index formula**
 
 ![gini-index-formula](assets/gini-index-formula.jpg)
 
-where p<sub>j</sub> is the probability of class j [18]. 
+donde p<sub>j</sub> es la probabilidad de la clase j [18]. 
 
-The Gini index is based on the Lorenz curve. The Lorenz curve plots the true positive rate (y-axis) as a function of percentiles of the population (x-axis).
+El índice de Gini se basa en la curva de Lorenz. La curva de Lorenz traza la tasa positiva verdadera (eje y) en función de los percentiles de la población (eje x).
 
-The Lorenz curve represents a collective of models represented by the classifier. The location on the curve is given by the probability threshold of a particular model. (i.e., Lower probability thresholds for classification typically lead to more true positives, but also to more false positives.)[12]
+La curva de Lorenz representa un colectivo de modelos representados por el clasificador. La ubicación en la curva viene dada por el umbral de probabilidad de un modelo en particular. (es decir, los umbrales de probabilidad más bajos para la clasificación suelen generar más positivos verdaderos, pero también más falsos positivos). [12]
 
-The Gini index itself is independent of the model and only depends on the Lorenz curve determined by the distribution of the scores (or probabilities) obtained from the classifier. 
+El índice de Gini en sí es independiente del modelo y solo depende de la curva de Lorenz determinada por la distribución de las puntuaciones (o probabilidades) obtenidas del clasificador.. 
 
-#### Accuracy
+#### Exactitud
 
-Accuracy or  ACC (not to be confused with AUC or area under the curve) is a single metric in binary classification problems. ACC is the ratio number of correct predictions divided by the total number of predictions. In other words, how well can the model correctly identify both the true positives and true negatives. Accuracy is measured in the range of 0 to 1, where 1 is perfect accuracy or perfect classification, and 0 is poor accuracy or poor classification[8].   
+La precisión o ACC (que no debe confundirse con el AUC o el área bajo la curva) es una métrica única en los problemas de clasificación binaria. ACC es el número de razón de predicciones correctas dividido por el número total de predicciones. En otras palabras, ¿qué tan bien puede el modelo identificar correctamente tanto los verdaderos positivos como los verdaderos negativos? La precisión se mide en el rango de 0 a 1, donde 1 es precisión perfecta o clasificación perfecta y 0 es precisión deficiente o clasificación deficiente [8].
 
-Using the confusion matrix table, ACC can be calculated in the following manner:
+Usando la tabla de matriz de confusión, ACC se puede calcular de la siguiente manera:
 
-**Accuracy** equation = (TP + TN) / (TP + TN + FP + FN)
+Ecuación de **precisión** = (TP + TN) / (TP + TN + FP + FN)
 
 ![accuracy-equation](assets/accuracy-equation.jpg)
 
-#### F-Score: F1, F0.5 and F2
+#### Puntuación F: F1, F0.5 y F2
 
-The F1 Score is another measurement of classification accuracy. It represents the harmonic average of the precision and recall. F1 is measured in the range of 0 to 1, where 0 means that there are no true positives, and 1 when there is neither false negatives nor false positives or perfect precision and recall [9].
+La puntuación F1 es otra medida de la precisión de la clasificación. Representa el promedio armónico de la precisión y la recuperación. F1 se mide en el rango de 0 a 1, donde 0 significa que no hay verdaderos positivos y 1 cuando no hay falsos negativos ni falsos positivos o precisión y recuerdo perfectos [9].
 
-Using the confusion matrix table, the F1 score can be calculated in the following manner:
+Usando la tabla de matriz de confusión, la puntuación F1 se puede calcular de la siguiente manera:
 
-**F1** = 2TP /( 2TP + FN + FP)
+**F1** = 2TP / (2TP + FN + FP)
 
-**F1** equation: 
+**F1** ecuación:
 
 ![f1-score-equation](assets/f1-score-equation.jpg)
 
-**F0.5** equation:
+**F0.5** ecuación:
 
 ![f05-score-equation](assets/f05-score-equation.jpg)
 
-Where:
-Precision is the positive observations (true positives) the model correctly identified from all the observations it labeled as positive (the true positives + the false positives). Recall is the positive observations (true positives) the model correctly identified from all the actual positive cases (true positives + false negatives)[15].
+Dónde:
+La precisión son las observaciones positivas (verdaderos positivos) que el modelo identificó correctamente a partir de todas las observaciones que etiquetó como positivas (los verdaderos positivos + los falsos positivos). El recuerdo son las observaciones positivas (verdaderos positivos) que el modelo identificó correctamente de todos los casos positivos reales (verdaderos positivos + falsos negativos) [15].
 
-**DISPLAY F2 score equation**
+**DISPLAY F2 puntuación ecuación**
 
-The **F2 score** is the weighted harmonic mean of the precision and recall (given a threshold value). Unlike the F1 score, which gives equal weight to precision and recall, the F2 score gives more weight to recall than to precision. More weight should be given to recall for cases where False Negatives are considered to have a stronger negative business impact than False Positives. For example, if your use case is to predict which customers will churn, you may consider False Negatives worse than False Positives. In this case, you want your predictions to capture all of the customers that will churn. Some of these customers may not be at risk for churning, but the extra attention they receive is not harmful. More importantly, no customers actually at risk of churning have been missed [15].
+La **puntuación F2** es la media armónica ponderada de la precisión y la recuperación (dado un valor umbral). A diferencia de la puntuación F1, que otorga el mismo peso a la precisión y la memoria, la puntuación F2 le da más importancia a la memoria que a la precisión. Se debe dar más peso al retiro de casos en los que se considera que los falsos negativos tienen un impacto comercial negativo más fuerte que los falsos positivos. Por ejemplo, si su caso de uso es predecir qué clientes abandonarán, puede considerar que los falsos negativos son peores que los falsos positivos. En este caso, desea que sus predicciones capturen a todos los clientes que se agotarán. Es posible que algunos de estos clientes no corran el riesgo de que se agiten, pero la atención adicional que reciben no es perjudicial. Y lo que es más importante, no se ha perdido ningún cliente con riesgo real de abandono [15].
 
 ![f2-score-equation](assets/f2-score-equation.jpg)
 
-Where: Precision is the positive observations (true positives) the model correctly identified from all the observations it labeled as positive (the true positives + the false positives). Recall is the positive observations (true positives) the model correctly identified from all the actual positive cases (the true positives + the false negatives).
+Donde: Precisión son las observaciones positivas (verdaderos positivos) que el modelo identificó correctamente a partir de todas las observaciones que etiquetó como positivas (los verdaderos positivos + los falsos positivos). Recordar son las observaciones positivas (verdaderos positivos) que el modelo identificó correctamente de todos los casos positivos reales (los verdaderos positivos + los falsos negativos).
 
 #### MCC
 
-MCC or Matthews Correlation Coefficient which is used as a measure of the quality of binary classifications [1]. The MCC is the correlation coefficient between the observed and predicted binary classifications. MCC is measured in the range between -1 and +1 where +1 is the perfect prediction, 0 no better than a random prediction and -1 all incorrect predictions [9].
+MCC o coeficiente de correlación de Matthews que se utiliza como medida de la calidad de las clasificaciones binarias [1]. El MCC es el coeficiente de correlación entre las clasificaciones binarias observadas y predichas. MCC se mide en el rango entre -1 y +1 donde +1 es la predicción perfecta, 0 no es mejor que una predicción aleatoria y -1 todas las predicciones incorrectas [9].
 
-Using the confusion matrix table MCC can be calculated in the following manner:
+Usando la tabla de matriz de confusión, MCC se puede calcular de la siguiente manera:
 
-**MCC** equation:
+**MCC** ecuación:
 
 ![mcc-equation](assets/mcc-equation.jpg)
 
-#### Log Loss (Logloss)
+#### Pérdida de registro (pérdida de registro)
  
-The logarithmic loss metric can be used to evaluate the performance of a binomial or multinomial classifier. Unlike AUC which looks at how well a model can classify a binary target, logloss evaluates how close a model’s predicted values (uncalibrated probability estimates) are to the actual target value. For example, does a model tend to assign a high predicted value like 0.80 for the positive class, or does it show poor ability to recognize the positive class and assign a lower predicted value like 0.50? A model with a log loss of 0 would be the perfect classifier. When the model is unable to make correct predictions, the log loss increases making the model a poor model[11].
+La métrica de pérdida logarítmica se puede utilizar para evaluar el rendimiento de un clasificador binomial o multinomial. A diferencia de AUC, que analiza qué tan bien un modelo puede clasificar un objetivo binario, logloss evalúa qué tan cerca están los valores predichos de un modelo (estimaciones de probabilidad no calibradas) del valor objetivo real. Por ejemplo, ¿un modelo tiende a asignar un valor predicho alto como 0,80 para la clase positiva, o muestra poca capacidad para reconocer la clase positiva y asignar un valor predicho más bajo como 0,50? Un modelo con una pérdida logarítmica de 0 sería el clasificador perfecto. Cuando el modelo no puede hacer predicciones correctas, la pérdida logarítmica aumenta, lo que hace que el modelo sea un modelo deficiente [11].
 
-**Binary classification equation:**
+**Ecuación de clasificación binaria:**
 
 ![logloss-binary-classification-equation](assets/logloss-binary-classification-equation.jpg)
 
-**Multiclass classification equation:**
+**Ecuación de clasificación multiclase:**
 
 ![logloss-multiclass-classification-equation](assets/logloss-multiclass-classification-equation.jpg)
 
-Where:
+Dónde:
 
-- N is the total number of rows (observations) of your corresponding dataframe.
-- w is the per row user-defined weight (default is 1).
-- C is the total number of classes (C=2 for binary classification).
-- p is the predicted value (uncalibrated probability) assigned to a given row (observation).
-- y is the actual target value.
+- N es el número total de filas (observaciones) de su marco de datos correspondiente.
+- w es el peso definido por el usuario por fila (el valor predeterminado es 1).
+- C es el número total de clases (C = 2 para clasificación binaria).
+- p es el valor predicho (probabilidad no calibrada) asignado a una fila determinada (observación).
+- y es el valor objetivo real.
 
-The Diagnostics section in Driverless AI calculates the ACC, F1, MCC values and plots those values in each ROC and Pre-Recall curves making it easier to identify the best threshold for the model generated. Additionally, it also calculates the log loss score for your model allowing you to quickly assess whether the model you generated is a good model or not. 
+La sección de Diagnóstico en Driverless AI calcula los valores de ACC, F1, MCC y traza esos valores en cada curva ROC y Pre-Recall, lo que facilita la identificación del mejor umbral para el modelo generado. Además, también calcula la puntuación de pérdida de registro para su modelo, lo que le permite evaluar rápidamente si el modelo que generó es un buen modelo o no.
 
-Let’s get back to evaluating metrics results for models.
+Volvamos a evaluar los resultados de las métricas de los modelos.
 
 
-### Gain and Lift Charts
+### Gráficos de ganancia y elevación
 
-Gain and Lift charts measure the effectiveness of a classification model by looking at the ratio between the results obtained with a trained model versus a random model (or no model) [7]. The Gain and Lift charts help us evaluate the performance of the classifier as well as answer questions such as what percentage of the dataset captured has a positive response as a function of selected percentage of a sample. Additionally, we can explore how much better we can expect to do with a model compared to a random model (or no model) [7].
+Los gráficos de ganancia y elevación miden la efectividad de un modelo de clasificación al observar la relación entre los resultados obtenidos con un modelo entrenado y un modelo aleatorio (o sin modelo) [7]. Los gráficos de ganancia y aumento nos ayudan a evaluar el rendimiento del clasificador, así como a responder preguntas como qué porcentaje del conjunto de datos capturado tiene una respuesta positiva en función del porcentaje seleccionado de una muestra. Además, podemos explorar cuánto mejor podemos esperar hacer con un modelo en comparación con un modelo aleatorio (o sin modelo) [7].
 
-One way we can think of gain is “for every step that is taken to predict an outcome, the level of uncertainty decreases. A drop of uncertainty is the loss of entropy which leads to knowledge gain” [15]. The Gain Chart plots the true positive rate (sensitivity) versus the predictive positive rate(**support**) where: 
+Una forma en que podemos pensar en la ganancia es “por cada paso que se da para predecir un resultado, el nivel de incertidumbre disminuye. Una gota de incertidumbre es la pérdida de entropía que conduce a la ganancia de conocimiento ”[15]. El gráfico de ganancia traza la tasa positiva verdadera (sensibilidad) frente a la tasa positiva predictiva (**soporte**) donde:
 
-**Sensitivity** = **Recall** = True Positive Rate = TP / (TP + FN)
+**Sensibilidad** = **Recordar** = Tasa de verdaderos positivos = TP / (TP + FN)
 
-**Support** = **Predictive Positive Rate**  = TP + FP / (TP + FP + FN+TN) 
+**Soporte** = **Tasa positiva predictiva** = TP + FP / (TP + FP + FN + TN) 
 
 ![sensitivity-and-support](assets/sensitivity-and-support.jpg)
 
-To better visualize the percentage of positive responses compared to a selected percentage sample, we use **Cumulative Gains** and **Quantile**. Cumulative gains is obtained by taking the predictive model and applying it to the test dataset which is a subset of the original dataset. The predictive model will score each case with a probability. The scores are then sorted in ascending order by the predictive score. The quantile takes the total number of cases(a finite number) and partitions the finite set into subsets of nearly equal sizes. The percentile is plotted from 0th and 100th percentile. We then plot the cumulative number of cases up to each quantile starting with the positive cases  at 0%  with the highest probabilities until we reach 100% with the positive cases that scored the lowest probabilities. 
+Para visualizar mejor el porcentaje de respuestas positivas en comparación con una muestra de porcentaje seleccionada, utilizamos **Ganancias acumuladas** y **Cuantil**. Las ganancias acumuladas se obtienen tomando el modelo predictivo y aplicándolo al conjunto de datos de prueba, que es un subconjunto del conjunto de datos original. El modelo predictivo puntuará cada caso con una probabilidad. A continuación, las puntuaciones se clasifican en orden ascendente según la puntuación predictiva. El cuantil toma el número total de casos (un número finito) y divide el conjunto finito en subconjuntos de tamaños casi iguales. El percentil se traza a partir de los percentiles 0 y 100. Luego trazamos el número acumulado de casos hasta cada cuantil comenzando con los casos positivos al 0% con las probabilidades más altas hasta llegar al 100% con los casos positivos que obtuvieron las probabilidades más bajas.
 
-In the cumulative gains chart, the x-axis shows the percentage of cases from the total number of cases in the test dataset, while the y-axis shows the percentage of positive responses in terms of quantiles. As mentioned, since the probabilities have been ordered in ascending order we can look at the percent of predictive positive cases found in the 10% or 20% as a way to narrow down the number of positive cases that we are interested in. Visually the performance of the predictive model can be compared to that of a random model(or no model). The random model is represented below in red as the worst case scenario of random sampling.
+En el gráfico de ganancias acumuladas, el eje x muestra el porcentaje de casos del número total de casos en el conjunto de datos de prueba, mientras que el eje y muestra el porcentaje de respuestas positivas en términos de cuantiles. Como se mencionó, dado que las probabilidades se han ordenado en orden ascendente, podemos ver el porcentaje de casos positivos predictivos encontrados en el 10% o 20% como una forma de reducir el número de casos positivos que nos interesan. Visualmente, el rendimiento del modelo predictivo se puede comparar con el de un modelo aleatorio (o sin modelo). El modelo aleatorio se representa a continuación en rojo como el peor escenario de muestreo aleatorio.
 
 ![cumulative-gains-chart-worst-case](assets/cumulative-gains-chart-worst-case.jpg)
 
-How can we identify the best case scenario in relation to the random model? To do this we need to identify a Base Rate first. The Base Rate sets the limits of the optimal curve. The best gains are always controlled by the Base Rate. An example of a Base Rate can be seen on the chart below (dashed green). 
+¿Cómo podemos identificar el mejor escenario en relación con el modelo aleatorio? Para hacer esto, primero debemos identificar una tarifa base. La tasa base establece los límites de la curva óptima. Las mejores ganancias siempre están controladas por la tasa base. Se puede ver un ejemplo de una Tasa Base en el gráfico a continuación (punteado en verde).
 
-- **Base Rate** is defined as:
+- **Tarifa base** se define como:
 
-- **Base Rate** = (TP+FN) /Sample Size
+- **Tasa base** = (TP + FN) / Tamaño de muestra
 
 ![cumulative-gains-chart-best-case](assets/cumulative-gains-chart-best-case.jpg)
 
-The above chart represents the best case scenario of a cumulative gains chart assuming a base rate of 20%. In this scenario all the positive cases were identified before reaching the base rate.
+El gráfico anterior representa el mejor escenario de un gráfico de ganancias acumuladas asumiendo una tasa base del 20%. En este escenario se identificaron todos los casos positivos antes de alcanzar la tasa base.
 
-The chart below represents an example of a predictive model (solid green curve). We can see how well the predictive model did in comparison to the random model (dotted red line). Now, we can pick a quantile and determine the percentage of positive cases up that quartile in relation to the entire test dataset. 
+El siguiente cuadro representa un ejemplo de un modelo predictivo (curva verde continua). Podemos ver qué tan bien funcionó el modelo predictivo en comparación con el modelo aleatorio (línea roja punteada). Ahora, podemos elegir un cuantil y determinar el porcentaje de casos positivos en ese cuartil en relación con todo el conjunto de datos de prueba.
 
 ![cumulative-gains-chart-predictive-model](assets/cumulative-gains-chart-predictive-model.jpg)
 
-Lift can help us answer the question of how much better one can expect to do with the predictive model compared to a random model (or no model). Lift is a measure of the effectiveness of a predictive model calculated as the ratio between the results obtained with a model and with a random model (or no model). In other words, the ratio of gain % to the random expectation % at a given quantile. The random expectation of the xth quantile is x %[16].
+Lift puede ayudarnos a responder la pregunta de cuánto mejor se puede esperar hacer con el modelo predictivo en comparación con un modelo aleatorio (o sin modelo). Lift es una medida de la efectividad de un modelo predictivo calculada como la relación entre los resultados obtenidos con un modelo y con un modelo aleatorio (o sin modelo). En otras palabras, la relación entre el% de ganancia y el% de expectativa aleatoria en un cuantil dado. La expectativa aleatoria del x-ésimo cuantil es x% [16].
 
-**Lift** = Predictive rate/ Actual rate
+**Incremento** = Tasa predictiva / Tasa real
 
-When plotting lift, we also plot it against quantiles in order to help us visualize how likely it is that a positive case will take place since the Lift chart is derived from the cumulative gains chart. The points of the lift curve are calculated by determining the ratio between the result predicted by our model and the result using a random model (or no model). For instance, assuming a base rate (or hypothetical threshold) of 20% from a random model, we would take the cumulative gain percent at the 20% quantile, X and divide by it by 20. We do this for all the quantiles until we get the full lift curve. 
+Al graficar la elevación, también la graficamos contra cuantiles para ayudarnos a visualizar la probabilidad de que ocurra un caso positivo, ya que el gráfico de elevación se deriva del gráfico de ganancias acumuladas. Los puntos de la curva de elevación se calculan determinando la relación entre el resultado predicho por nuestro modelo y el resultado utilizando un modelo aleatorio (o ningún modelo). Por ejemplo, asumiendo una tasa base (o umbral hipotético) del 20% de un modelo aleatorio, tomaríamos el porcentaje de ganancia acumulada en el cuantil del 20%, X y lo dividiríamos por 20. Hacemos esto para todos los cuantiles hasta que obtener la curva de elevación completa.
 
-We can start the lift chart with the base rate as seen below, recall that the base rate is the target threshold.
+Podemos comenzar el gráfico de elevación con la tasa base como se ve a continuación, recuerde que la tasa base es el umbral objetivo.
 
 ![lift-chart-base-rate](assets/lift-chart-base-rate.jpg)
 
-When looking at the cumulative lift for the top quantiles, X, what it means is that when we select lets say 20% from the quantile from the total test cases based on the mode, we can expect X/20 times the total of the number of positive cases found by randomly selecting 20% from the random model.
+Al observar la elevación acumulada de los cuantiles superiores, X, lo que significa es que cuando seleccionamos digamos 20% del cuantil del total de casos de prueba basados en el modo, podemos esperar X / 20 veces el total del número de casos positivos encontrados mediante la selección aleatoria del 20% del modelo aleatorio.
 
 
 ![lift-chart](assets/lift-chart.jpg)
 
 ### Kolmogorov-Smirnov Chart 
 
-Kolmogorov-Smirnov or K-S measures the performance of classification models by measuring the degree of separation between positives and negatives for validation or test data [13]. 
+Kolmogorov-Smirnov o K-S mide el rendimiento de los modelos de clasificación midiendo el grado de separación entre positivos y negativos para la validación o los datos de prueba [13].
 
-The KS statistic is the maximum difference between the cumulative percentage of responders or 1's (cumulative true positive rate) and cumulative percentage of non-responders or 0's (cumulative false positive rate). The significance of KS statistic is, it helps to understand what portion of the population should be targeted to get the highest response rate (1's) [17].
+La estadística KS es la diferencia máxima entre el porcentaje acumulado de respondedores o 1 (tasa acumulada de verdaderos positivos) y el porcentaje acumulativo de no respondedores o 0 (tasa acumulada de falsos positivos). La importancia de la estadística KS es que ayuda a comprender qué parte de la población debe ser el objetivo para obtener la tasa de respuesta más alta (1) [17].
 
 ![k-s-chart](assets/k-s-chart.jpg)
 
@@ -930,7 +933,7 @@ The KS statistic is the maximum difference between the cumulative percentage of 
 
 [18] [Scikit-Learn: Decision Tree Learning I - Entropy, GINI, and Information Gain](https://www.bogotobogo.com/python/scikit-learn/scikt_machine_learning_Decision_Tree_Learning_Informatioin_Gain_IG_Impurity_Entropy_Gini_Classification_Error.php)
 
-### Deeper Dive and Resources
+### Inmersión más profunda y recursos
 
 - [How and when to use ROC Curves and Precision-Recall Curves for Classification in Python](https://machinelearningmastery.com/roc-curves-and-precision-recall-curves-for-classification-in-python/)
 
